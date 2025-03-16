@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import postgres from "postgres";
-import { logRed, logYellow } from "./funcciones/logsCustom.js";
+import { logRed, logYellow } from "./funciones/logsCustom.js";
 
 dotenv.config({ path: process.env.ENV_FILE || ".env" });
 

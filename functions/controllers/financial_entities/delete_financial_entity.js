@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db.js";
-import { logRed, logYellow } from "../../functions/logsCustom.js";
+import { logRed, logYellow } from "../../funciones/logsCustom.js";
 
 export async function deleteFinancialEntity(financialEntityId) {
   try {

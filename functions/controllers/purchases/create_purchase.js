@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db.js";
-import { logRed, logYellow } from "../../functions/logsCustom.js";
+import { logRed, logYellow } from "../../funciones/logsCustom.js";
 
 export async function createPurchase(image, amount, amount_per_quota, amount_of_quotas, payed_quotas, currency_type, name, type, financial_entity_id, fixed_expense) {
   try {

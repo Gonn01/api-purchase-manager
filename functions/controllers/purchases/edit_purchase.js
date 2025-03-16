@@ -1,7 +1,7 @@
 import { executeQuery } from "../../db.js";
-import { logRed, logYellow } from "../../functions/logsCustom.js";
+import { logRed, logYellow } from "../../funciones/logsCustom.js";
 
-export async function editUser(newName, userId) {
+export async function editPurchase(newName, userId) {
   try {
     const checkQuery = "SELECT id FROM users WHERE id = $1";
     const checkResult = await executeQuery(checkQuery, [userId]);

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { performance } from "perf_hooks";
-import { verifyParamaters } from "../functions/verifyParameters.js";
-import { logPurple, logRed } from "../functions/logsCustom.js";
+import { verifyParamaters } from "../funciones/verifyParameters.js";
+import { logPurple, logRed } from "../funciones/logsCustom.js";
 import { createFinancialEntity } from "../controllers/financial_entities/create_financial_entity.js";
 import { getFinancialEntities } from "../controllers/financial_entities/get_financial_entities.js";
 import { editFinancialEntity } from "../controllers/financial_entities/edit_financial_entity.js";
@@ -77,7 +77,7 @@ financialEntitiesRouter.put("/:financialEntityId", async (req, res) => {
   const { newName } = req.body;
 
   try {
-    const result = await editFinancialEntities(newName, financialEntityId);
+    const result = await editFinancialEntity(newName, financialEntityId);
 
     res.status(200).json({
       body: result,

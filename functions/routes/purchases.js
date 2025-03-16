@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { performance } from "perf_hooks";
-import { verifyParamaters } from "../functions/verifyParameters.js";
-import { logPurple, logRed } from "../functions/logsCustom.js";
+import { verifyParamaters } from "../funciones/verifyParameters.js";
+import { logPurple, logRed } from "../funciones/logsCustom.js";
 import { createPurchase } from "../controllers/purchases/create_purchase.js";
 import { deletePurchase } from "../controllers/purchases/delete_purchase.js";
 import { editPurchase } from "../controllers/purchases/edit_purchase.js";

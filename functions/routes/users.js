@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { performance } from "perf_hooks";
-import { verifyParamaters } from "../functions/verifyParameters.js";
-import { logPurple, logRed } from "../functions/logsCustom.js";
+import { verifyParamaters } from "../funciones/verifyParameters.js";
+import { logPurple, logRed } from "../funciones/logsCustom.js";
 import { createUser } from "../controllers/users/create_user.js";
 import { getUsers } from "../controllers/users/get_users.js";
 import { editUser } from "../controllers/users/edit_user.js";
