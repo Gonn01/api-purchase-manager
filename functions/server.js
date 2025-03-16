@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import serverless from "serverless-http";
-import financialEntitiesRouter from "./routes/financial_entities.js";
-import purchases from "./routes/purchases.js";
-import users from "./routes/users.js";
+import financialEntitiesRouter from "../routes/financial_entities.js";
+import purchases from "../routes/purchases.js";
+import users from "../routes/users.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
