@@ -15,7 +15,7 @@ export async function editPurchase(newName, userId) {
     const query = "UPDATE users SET name = $1 WHERE id = $2";
     const result = await executeQuery(query, [newName, userId]);
 
-    if (result.length == 0) {
+    if (result.affectedRows == 0) {
       logRed("No se pudo actualizar la entidad financiera.");
       throw new Error("No se pudo actualizar la entidad financiera.");
     }

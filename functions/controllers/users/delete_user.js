@@ -14,7 +14,7 @@ export async function deleteUser(userId) {
     const query = "DELETE FROM users WHERE id = $1";
     const result = await executeQuery(query, [userId]);
 
-    if (result.length == 0) {
+    if (result.affectedRows == 0) {
       logRed("No se pudo eliminar el usuario.");
       throw new Error("No se pudo eliminar el usuario.");
     }

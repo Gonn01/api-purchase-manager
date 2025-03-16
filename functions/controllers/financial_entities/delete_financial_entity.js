@@ -18,7 +18,7 @@ export async function deleteFinancialEntity(financialEntityId) {
     const query = "UPDATE financial_entities SET deleted = true WHERE id = $1";
     const result = await executeQuery(query, [financialEntityId]);
 
-    if (result.length == 0) {
+    if (result.affectedRows == 0) {
       logRed("No se pudo eliminar la entidad financiera.");
       throw new Error("No se pudo eliminar la entidad financiera.");
     }

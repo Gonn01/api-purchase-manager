@@ -3,7 +3,7 @@ import { logRed, logYellow } from "../../funciones/logsCustom.js";
 
 export async function getPurchasesByFinancialEntityId() {
   try {
-    const query = "SELECT * FROM purchases WHERE financial_entity_id = $1";
+    const query = "SELECT * FROM purchases WHERE financial_entity_id = $1 AND deleted = false";
     const result = await executeQuery(query);
 
     if (result.length == 0) {

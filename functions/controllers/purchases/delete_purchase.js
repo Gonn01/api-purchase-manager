@@ -18,7 +18,7 @@ export async function deletePurchase(purchaseId) {
     const query = "UPDATE purchases SET deleted = true WHERE id = $1";
     const result = await executeQuery(query, [purchaseId]);
 
-    if (result.length == 0) {
+    if (result.affectedRows == 0) {
       logRed("No se pudo eliminar la compra.");
       throw new Error("No se pudo eliminar la compra.");
     }
