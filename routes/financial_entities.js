@@ -4,7 +4,7 @@ import { verifyParamaters } from "../functions/verifyParameters.js";
 import { logPurple, logRed } from "../functions/logsCustom.js";
 import { createFinancialEntity } from "../controllers/financial_entities/create_financial_entity.js";
 import { getFinancialEntities } from "../controllers/financial_entities/get_financial_entities.js";
-import { editFinancialEntities } from "../controllers/financial_entities/edit_financial_entity.js";
+import { editFinancialEntity } from "../controllers/financial_entities/edit_financial_entity.js";
 import { deleteFinancialEntity } from "../controllers/financial_entities/delete_financial_entity.js";
 
 const financialEntitiesRouter = Router();

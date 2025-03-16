@@ -2,14 +2,15 @@ import { Router } from "express";
 import { performance } from "perf_hooks";
 import { verifyParamaters } from "../functions/verifyParameters.js";
 import { logPurple, logRed } from "../functions/logsCustom.js";
-import { createFinancialEntity } from "../controllers/financial_entities/create_financial_entity.js";
-import { getFinancialEntities } from "../controllers/financial_entities/get_financial_entities.js";
-import { editFinancialEntities } from "../controllers/financial_entities/edit_financial_entity.js";
-import { deleteFinancialEntity } from "../controllers/financial_entities/delete_financial_entity.js";
+import { createPurchase } from "../controllers/purchases/create_purchase.js";
+import { deletePurchase } from "../controllers/purchases/delete_purchase.js";
+import { editPurchase } from "../controllers/purchases/edit_purchase.js";
+import {  getPurchasesByUserId } from "../controllers/purchases/get_purchases_by_user_id.js";
+import {  getPurchasesByFinancialEntityId } from "../controllers/purchases/get_purchases_by_financial_entity_id.js";
 
-const financialEntitiesRouter = Router();
+const purchasesRouter = Router();
 
-financialEntitiesRouter.post("/create", async (req, res) => {
+purchasesRouter.post("/create", async (req, res) => {
   const startTime = performance.now();
 
   const errorMessage = verifyParamaters(req.body, ["name", "userId"]);
@@ -21,7 +22,7 @@ financialEntitiesRouter.post("/create", async (req, res) => {
   const { name, userId } = req.body;
 
   try {
-    const result = await creatpu(name, userId);
+    const result = await createPurchase(name, userId);
 
     res.status(200).json({
       body: result,
@@ -36,7 +37,7 @@ financialEntitiesRouter.post("/create", async (req, res) => {
   }
 });
 
-financialEntitiesRouter.get("/", async (req, res) => {
+purchasesRouter.get("/", async (req, res) => {
   const startTime = performance.now();
 
   const errorMessage = verifyParamaters(req.body, ["userId"]);
@@ -48,7 +49,7 @@ financialEntitiesRouter.get("/", async (req, res) => {
   const { userId } = req.body;
 
   try {
-    const result = await getFinancialEntities(userId);
+    const result = await getPurchasesByUserId(userId);
 
     res.status(200).json({
       body: result,
@@ -63,21 +64,21 @@ financialEntitiesRouter.get("/", async (req, res) => {
   }
 });
 
-financialEntitiesRouter.put("/:financialEntityId", async (req, res) => {
+purchasesRouter.put("/:purchaseId", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.params, ["financialEntityId"]);
+  const errorMessage = verifyParamaters(req.params, ["purchaseId"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { financialEntityId } = req.params;
+  const {  purchaseId } = req.params;
 
   const { newName } = req.body;
 
   try {
-    const result = await editFinancialEntities(newName, financialEntityId);
+    const result = await editPurchase(newName, purchaseId);
 
     res.status(200).json({
       body: result,
@@ -92,19 +93,19 @@ financialEntitiesRouter.put("/:financialEntityId", async (req, res) => {
   }
 });
 
-financialEntitiesRouter.delete("/:financialEntityId", async (req, res) => {
+purchasesRouter.delete("/:purchaseId", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.params, ["financialEntityId"]);
+  const errorMessage = verifyParamaters(req.params, ["purchaseId"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { financialEntityId } = req.params;
+  const { purchaseId } = req.params;
 
   try {
-    const result = await deleteFinancialEntity(financialEntityId);
+    const result = await deletePurchase(purchaseId);
 
     res.status(200).json({
       body: result,
@@ -119,4 +120,4 @@ financialEntitiesRouter.delete("/:financialEntityId", async (req, res) => {
   }
 });
 
-export default financialEntitiesRouter;
+export default purchasesRouter;
