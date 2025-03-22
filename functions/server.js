@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import serverless from "serverless-http";
-import { logBlue, logPurple, logRed } from "./funciones/logsCustom.js";
+import { logBlue, logPurple, logRed, logYellow } from "./funciones/logsCustom.js";
 import { performance } from "perf_hooks";
 import { verifyParamaters } from "./funciones/verifyParameters.js";
 import { createFinancialEntity } from "../functions/controllers/financial_entities/create_financial_entity.js";
@@ -17,6 +17,10 @@ import { getPurchasesByUserId } from "./controllers/purchases/get_purchases_by_u
 import { getPurchasesByFinancialEntityId } from "./controllers/purchases/get_purchases_by_financial_entity_id.js";
 import { editPurchase } from "./controllers/purchases/edit_purchase.js";
 import { deletePurchase } from "./controllers/purchases/delete_purchase.js";
+import { getHomeData } from "./controllers/home/get_home_data.js";
+import { payQuota } from "./controllers/purchases/pay_quota.js";
+import { ignorePurchase } from "./controllers/purchases/ignore_purchase.js";
+import { login } from "./controllers/users/login.js";
 
 
 var app = express();
@@ -62,16 +66,16 @@ router.post("/financial-entities/", async (req, res) => {
   }
 });
 
-router.get("/financial-entities/", async (req, res) => {
+router.get("/financial-entities/:userId", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.body, ["userId"]);
+  const errorMessage = verifyParamaters(req.params, ["userId"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { userId } = req.body;
+  const { userId } = req.params;
 
   try {
     const result = await getFinancialEntities(userId);
@@ -102,15 +106,14 @@ router.put("/financial-entities/:financialEntityId", async (req, res) => {
     return res.status(400).json({ message: errorMessage2 });
   }
 
-  const  {financialEntityId}  = req.params;
-  
+  const { financialEntityId } = req.params;
+
   const { newName } = req.body;
 
   try {
-    const result = await editFinancialEntity(newName, financialEntityId);
+    await editFinancialEntity(newName, financialEntityId);
 
     res.status(200).json({
-      body: result,
       message: "Entidad financiera actualizada correctamente",
     });
   } catch (error) {
@@ -122,7 +125,7 @@ router.put("/financial-entities/:financialEntityId", async (req, res) => {
   }
 });
 
-router.delete("/:financialEntityId", async (req, res) => {
+router.delete("/financial-entities/:financialEntityId", async (req, res) => {
   const startTime = performance.now();
 
   const errorMessage = verifyParamaters(req.params, ["financialEntityId"]);
@@ -134,10 +137,9 @@ router.delete("/:financialEntityId", async (req, res) => {
   const { financialEntityId } = req.params;
 
   try {
-    const result = await deleteFinancialEntity(financialEntityId);
+    await deleteFinancialEntity(financialEntityId);
 
     res.status(200).json({
-      body: result,
       message: "Entidad financiera eliminada correctamente",
     });
   } catch (error) {
@@ -156,16 +158,16 @@ router.delete("/:financialEntityId", async (req, res) => {
 router.post("/users/", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.body, ["name", "email"]);
+  const errorMessage = verifyParamaters(req.body, ["firebaseUserId", "name", "email"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { name,  email } = req.body;
+  const { firebaseUserId, name, email } = req.body;
 
   try {
-    const result = await createUser(name, email);
+    const result = await createUser(firebaseUserId, name, email);
 
     res.status(200).json({
       body: result,
@@ -207,12 +209,12 @@ router.put("/users/:userId", async (req, res) => {
     return res.status(400).json({ message: errorMessage });
   }
   const errorMessage2 = verifyParamaters(req.body, ["newName"]);
-  
+
   if (errorMessage2) {
     return res.status(400).json({ message: errorMessage2 });
   }
 
-  const  {userId} = req.params;
+  const { userId } = req.params;
 
   const { newName } = req.body;
 
@@ -244,14 +246,46 @@ router.delete("/users/:userId", async (req, res) => {
   const { userId } = req.params;
 
   try {
-    const result = await deleteUser(userId);
+    await deleteUser(userId);
 
     res.status(200).json({
-      body: result,
       message: "Usuario eliminado correctamente",
     });
   } catch (error) {
     logRed(`Error en DELETE users: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+
+router.post("/users/login", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage = verifyParamaters(req.body, ["firebaseUserId", "name", "email"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { firebaseUserId, email, name } = req.body;
+
+  try {
+    const alreadyRegistered = await login(firebaseUserId, email, name);
+
+    if (alreadyRegistered) {
+      return res.status(200).json({
+        message: "Usuario ya registrado",
+      });
+    } else {
+      res.status(200).json({
+        message: "Usuario logeado correctamente",
+      });
+    }
+
+  } catch (error) {
+    logRed(`Error en login: ${error.stack}`);
     res.status(500).json({ message: error.stack });
   } finally {
     const endTime = performance.now();
@@ -268,16 +302,16 @@ router.delete("/users/:userId", async (req, res) => {
 router.post("/purchases/", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.body, ["name", "userId"]);
+  const errorMessage = verifyParamaters(req.body, ["ignored", "amount", "amountOerQuota", "numberOfQuotas", "currencyType", "name", "type", "financialEntityId", "fixedExpense"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { name, userId } = req.body;
+  const { ignored, amount, amountOerQuota, numberOfQuotas, currencyType, name, type, financialEntityId, fixedExpense } = req.body;
 
   try {
-    const result = await createPurchase(name, userId);
+    const result = await createPurchase(ignored, image, amount, amountOerQuota, numberOfQuotas, currencyType, name, type, financialEntityId, fixedExpense);
 
     res.status(200).json({
       body: result,
@@ -295,13 +329,13 @@ router.post("/purchases/", async (req, res) => {
 router.get("/purchases/:userId", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.body, ["userId"]);
+  const errorMessage = verifyParamaters(req.params, ["userId"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { userId } = req.body;
+  const { userId } = req.params;
 
   try {
     const result = await getPurchasesByUserId(userId);
@@ -328,14 +362,37 @@ router.get("/purchases/:financialEntityId", async (req, res) => {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const errorMessage2 = verifyParamaters(req.params, ["financialEntityId"]);
-
-  if (errorMessage2) {
-    return res.status(400).json({ message: errorMessage2 });
-  }
+  const { financialEntityId } = req.params;
 
   try {
     const result = await getPurchasesByFinancialEntityId(financialEntityId);
+
+    res.status(200).json({
+      body: result,
+      message: "Lista de entidades financieras obtenida correctamente",
+    });
+  } catch (error) {
+    logRed(`Error en GET financial-entities: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+
+router.get("/purchases/:purchaseId", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage = verifyParamaters(req.params, ["purchaseId"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { purchaseId } = req.params;
+
+  try {
+    const result = await getPurchasesByFinancialEntityId(purchaseId);
 
     res.status(200).json({
       body: result,
@@ -359,12 +416,65 @@ router.put("/purchases/:purchaseId", async (req, res) => {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const {  purchaseId } = req.params;
+  const { purchaseId } = req.params;
 
   const { newName } = req.body;
 
   try {
     const result = await editPurchase(newName, purchaseId);
+
+    res.status(200).json({
+      body: result,
+      message: "Entidad financiera actualizada correctamente",
+    });
+  } catch (error) {
+    logRed(`Error en PUT financial-entities: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+
+router.put("/purchases/:purchaseId/pay-quota", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage = verifyParamaters(req.params, ["purchaseId"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { purchaseId } = req.params;
+
+  try {
+    const result = await payQuota(purchaseId);
+
+    res.status(200).json({
+      body: result,
+      message: "Entidad financiera actualizada correctamente",
+    });
+  } catch (error) {
+    logRed(`Error en PUT financial-entities: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+router.put("/purchases/:purchaseId/ignore", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage = verifyParamaters(req.params, ["purchaseId"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { purchaseId } = req.params;
+
+  try {
+    const result = await ignorePurchase(purchaseId);
 
     res.status(200).json({
       body: result,
@@ -399,6 +509,40 @@ router.delete("/purchases/:purchaseId", async (req, res) => {
     });
   } catch (error) {
     logRed(`Error en DELETE financial-entities: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+router.get("/home/:userId", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage = verifyParamaters(req.params, ["userId"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { userId } = req.params;
+
+  try {
+    const result = await getHomeData(userId);
+
+    res.status(200).json({
+      body: result,
+      message: "Datos de home obtenidos correctamente",
+    });
+  }
+  catch (error) {
+    logRed(`Error al obtener data del home: ${error.stack}`);
     res.status(500).json({ message: error.stack });
   } finally {
     const endTime = performance.now();

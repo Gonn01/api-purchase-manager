@@ -1,0 +1,3097 @@
+{
+    "idUser": "EzBO7YREjWNpTqNC9nVRbczJbTD2",
+    "categorias": [
+        {
+            "id": "2dJLmmiF3e6Eq6TrRl5B",
+            "name": "yo",
+            "logs": [
+                "Se creó yo. 04/08/2024 01:05",
+                "Se creó la compra ahorro febrero.05/02/2025 22:37",
+                "Se creó la compra celu febrero.06/02/2025 18:24",
+                "Se creó la compra Ahorro marzo.06/02/2025 23:27",
+                "Se creó la compra Ahorro resto febrero.06/02/2025 23:29",
+                "Se elimino la compra 8AfiiZgOoqpFzup15v7i. 02/03/2025 00:10",
+                "Se elimino la compra gGTnp4ywGonIVnjVcgVe. 02/03/2025 00:10"
+            ],
+            "compras": [
+                {
+                    "id": "3iLJn2YOsLkLZ4FjJ7Ct",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 9000.0,
+                    "amountPerQuota": 9000.0,
+                    "nameOfProduct": "celu febrero",
+                    "type": 2,
+                    "creationDate": "06/02/2025 18:23",
+                    "lastQuotaDate": "06/02/2025 18:24",
+                    "logs": [
+                        "Se creó la compra. 06/02/2025 18:23",
+                        "Se pago la ultima cuota. 06/02/2025 18:24"
+                    ],
+                    "firstQuotaDate": "06/02/2025 18:24",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ChXn7ZXVkhMYoyfTskIT",
+                    "currencyType": 1,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 250.0,
+                    "amountPerQuota": 250.0,
+                    "nameOfProduct": "ahorro febrero",
+                    "type": 2,
+                    "creationDate": "05/02/2025 22:37",
+                    "lastQuotaDate": "06/02/2025 23:26",
+                    "logs": [
+                        "Se creó la compra. 05/02/2025 22:37",
+                        "Se editó la compra. 06/02/2025 09:16",
+                        "Se editó la compra. 06/02/2025 23:26",
+                        "Se pago la ultima cuota. 06/02/2025 23:26"
+                    ],
+                    "firstQuotaDate": "06/02/2025 23:26",
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "GhDh2c4wwEgtu6VvldNU",
+            "name": "ICBC",
+            "logs": [
+                "Se creó ICBC. 10/09/2024 15:33",
+                "Se creó la compra Luz de papi.06/02/2025 17:17",
+                "Se creó la compra Remeras serbasics.08/02/2025 20:43",
+                "Se creó la compra viaje cataras.15/03/2025 18:43"
+            ],
+            "compras": [
+                {
+                    "id": "4v0W5sn2Jwx04U0V4ja2",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 2,
+                    "totalAmount": 18599.0,
+                    "amountPerQuota": 3099.8333333333335,
+                    "nameOfProduct": "Remera manga larga adidas verde",
+                    "type": 0,
+                    "creationDate": "12/01/2025 19:33",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 12/01/2025 19:33",
+                        "Se pago una cuota.06/02/2025 18:24",
+                        "Se pago una cuota.12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ATxCjMzNLcMWVMafmP8v",
+                    "currencyType": 0,
+                    "amountOfQuotas": 12,
+                    "quotasPayed": 5,
+                    "totalAmount": 250000.0,
+                    "amountPerQuota": 20833.333333333332,
+                    "nameOfProduct": "Prestamo",
+                    "type": 0,
+                    "creationDate": "10/09/2024 15:33",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 10/09/2024 15:33",
+                        "Se bajo una cuota.04/11/2024 19:43",
+                        "Se bajo una cuota.04/11/2024 19:43",
+                        "Se bajo una cuota.28/11/2024 22:16",
+                        "Se pago una cuota.06/02/2025 18:24",
+                        "Se pago una cuota.12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "MtkxdvdU7BupavqYFUm2",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 2,
+                    "totalAmount": 49999.0,
+                    "amountPerQuota": 8333.166666666666,
+                    "nameOfProduct": "Campera zooyork regalo cumple",
+                    "type": 0,
+                    "creationDate": "12/01/2025 19:34",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 12/01/2025 19:34",
+                        "Se pago una cuota.06/02/2025 18:24",
+                        "Se pago una cuota.12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "NfQvZd5eHYVPOfPgbVyJ",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 1,
+                    "totalAmount": 70378.0,
+                    "amountPerQuota": 11729.666666666666,
+                    "nameOfProduct": "Remeras serbasics",
+                    "type": 0,
+                    "creationDate": "08/02/2025 20:43",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 08/02/2025 20:43",
+                        "Se pago una cuota.12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": "12/03/2025 08:15",
+                    "ignored": false,
+                    "image": "http://res.cloudinary.com/dkdwnhsxf/image/upload/v1739058191/public/purchase-manager/Remeras%20serbasics.jpg"
+                },
+                {
+                    "id": "S3Ca1NagetVDNXxSbA1D",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 3,
+                    "totalAmount": 120000.0,
+                    "amountPerQuota": 20000.0,
+                    "nameOfProduct": "2 bermudas billabong",
+                    "type": 0,
+                    "creationDate": "23/11/2024 16:22",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 23/11/2024 16:22",
+                        "Se bajo una cuota.28/11/2024 22:16",
+                        "Se pago una cuota.06/02/2025 18:24",
+                        "Se pago una cuota.12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ZipQ32DIBth1ocgU216X",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 0,
+                    "totalAmount": 516442.0,
+                    "amountPerQuota": 86073.66666666667,
+                    "nameOfProduct": "viaje cataras",
+                    "type": 0,
+                    "creationDate": "15/03/2025 18:43",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 15/03/2025 18:43"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "kK1uzzndWUgD3qPNvPri",
+                    "currencyType": 0,
+                    "amountOfQuotas": 9,
+                    "quotasPayed": 5,
+                    "totalAmount": 55000.0,
+                    "amountPerQuota": 6111.111111111111,
+                    "nameOfProduct": "buzo vans verde",
+                    "type": 0,
+                    "creationDate": "01/10/2024 12:09",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 01/10/2024 12:09",
+                        "Se bajo una cuota.04/11/2024 19:43",
+                        "Se bajo una cuota.04/11/2024 19:43",
+                        "Se bajo una cuota.28/11/2024 22:16",
+                        "Se pago una cuota.06/02/2025 18:24",
+                        "Se pago una cuota.12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "kmXqsfBcyHoUDtbNHmzS",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 95850.0,
+                    "amountPerQuota": 95850.0,
+                    "nameOfProduct": "Luz de papi",
+                    "type": 2,
+                    "creationDate": "06/02/2025 17:17",
+                    "lastQuotaDate": "06/02/2025 18:24",
+                    "logs": [
+                        "Se creó la compra. 06/02/2025 17:17",
+                        "Se pago la ultima cuota. 06/02/2025 18:24"
+                    ],
+                    "firstQuotaDate": "06/02/2025 18:24",
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "Kecw3MvowmaauZGnIoqT",
+            "name": "Nico",
+            "logs": [
+                "test",
+                "Se creó la compra prestamo.25/01/2025 05:48",
+                "Se creó la compra prestamo.01/02/2025 18:01",
+                "Se creó la compra compras italia.02/02/2025 14:54"
+            ],
+            "compras": [
+                {
+                    "id": "5mBPNu5xatlseQQEnuAZ",
+                    "currencyType": 2,
+                    "amountOfQuotas": 2,
+                    "quotasPayed": 2,
+                    "totalAmount": 108.0,
+                    "amountPerQuota": 54.0,
+                    "nameOfProduct": "compras italia",
+                    "type": 2,
+                    "creationDate": "02/02/2025 14:54",
+                    "lastQuotaDate": "25/02/2025 18:46",
+                    "logs": [
+                        "Se creó la compra. 02/02/2025 14:54",
+                        "Se pago una cuota.06/02/2025 16:39",
+                        "Se pago la ultima cuota. 25/02/2025 18:46"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "CCMEQmEPf58vZ2bcJD2X",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 4000.0,
+                    "amountPerQuota": 4000.0,
+                    "nameOfProduct": "Hamburguesa wendys",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:20",
+                    "lastQuotaDate": "02/03/2024 16:01",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:20",
+                        "Se pago la ultima cuota. 02/03/2024 13:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "RiAWCMR0j1CWwb5yDAZp",
+                    "currencyType": 1,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 500.0,
+                    "amountPerQuota": 500.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 3,
+                    "creationDate": "25/01/2025 05:48",
+                    "lastQuotaDate": "06/02/2025 16:39",
+                    "logs": [
+                        "Se creó la compra. 25/01/2025 05:48",
+                        "Se pago la ultima cuota. 06/02/2025 16:39"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:39",
+                    "ignored": true,
+                    "image": null
+                },
+                {
+                    "id": "XFTlrvBZxW5dGz49Zvsc",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2100.0,
+                    "amountPerQuota": 2100.0,
+                    "nameOfProduct": "McFlurry",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:20",
+                    "lastQuotaDate": "02/03/2024 16:01",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:20",
+                        "Se pago la ultima cuota. 02/03/2024 13:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "YCbI6NWpSRJ2tCaON3mH",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 31000.0,
+                    "amountPerQuota": 15500.0,
+                    "nameOfProduct": "Zapatillas puma",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:10",
+                    "lastQuotaDate": "02/03/2024 16:01",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.31/01/2024 20:51",
+                        "Se bajo una cuota.31/01/2024 20:51",
+                        "Se bajo una cuota.01/02/2024 11:06",
+                        "Se pago la ultima cuota. 02/03/2024 13:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "hFtzxeWtzQWH4T5c80yY",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "01/02/2025 18:01",
+                    "lastQuotaDate": "06/02/2025 16:39",
+                    "logs": [
+                        "Se creó la compra. 01/02/2025 18:01",
+                        "Se pago la ultima cuota. 06/02/2025 16:39"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:39",
+                    "ignored": false,
+                    "image": "http://res.cloudinary.com/dkdwnhsxf/image/upload/v1738443667/public/purchase-manager/prestamo.jpg"
+                }
+            ]
+        },
+        {
+            "id": "LnKWqMwvpRR8i8Op5ZPZ",
+            "name": "Ari",
+            "logs": [
+                "Se creó Ari. 05/04/2024 17:48"
+            ],
+            "compras": [
+                {
+                    "id": "KEZGcmSUPJKH9uaLuaey",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2425.0,
+                    "amountPerQuota": 2425.0,
+                    "nameOfProduct": "mcflurry",
+                    "type": 2,
+                    "creationDate": "05/04/2024 17:48",
+                    "lastQuotaDate": "09/04/2024 22:11",
+                    "logs": [
+                        "Se creó la compra. 05/04/2024 17:48",
+                        "Se pago la ultima cuota. 09/04/2024 19:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "SIouCCeE32jl9Qw4zV8n",
+            "name": "Carly",
+            "logs": [
+                "Se creó Carly. 30/04/2024 18:42"
+            ],
+            "compras": []
+        },
+        {
+            "id": "abd3dlREnxH4SxoTBiG9",
+            "name": "Viejo",
+            "logs": [
+                "test",
+                "Se creó la compra Campamento ascona 2025. 16/01/2025 14:44",
+                "Se creó la compra Carne asado 16 de enero. 16/01/2025 14:45",
+                "Se creó la compra Birras para lo de la tia. 16/01/2025 14:46",
+                "Se creó la compra 1k de chuca.25/01/2025 05:45",
+                "Se creó la compra luz algo asi.25/01/2025 05:45",
+                "Se creó la compra prestamo.25/01/2025 05:47",
+                "Se creó la compra ahorro enero.25/01/2025 05:47",
+                "Se creó la compra ahorro febrero.25/01/2025 05:51",
+                "Se creó la compra diezmo enero.05/02/2025 22:36",
+                "Se elimino la compra mnTH1b2kHubJPNy7optn. 05/02/2025 22:37",
+                "Se creó la compra Yerba kurupi.10/02/2025 21:59",
+                "Se creó la compra pan de pancho y papas.15/02/2025 12:23",
+                "Se creó la compra Diezmo febrero parte 1.25/02/2025 18:57",
+                "Se creó la compra Diezmo febrero parte 2.01/03/2025 20:59",
+                "Se creó la compra Diezmo marzo.01/03/2025 21:04",
+                "Se creó la compra 1 pizza y media del lilo.01/03/2025 22:00"
+            ],
+            "compras": [
+                {
+                    "id": "0TA7SW64iMHLADwOKceY",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 7332.0,
+                    "amountPerQuota": 3666.0,
+                    "nameOfProduct": "remera billabong",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:06",
+                    "lastQuotaDate": "02/03/2024 16:35",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.01/02/2024 11:04",
+                        "Se pago la ultima cuota. 02/03/2024 13:35"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "1Mjbxp0plLYihihzfXEB",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 13000.0,
+                    "amountPerQuota": 4333.333333333333,
+                    "nameOfProduct": "medias vans",
+                    "type": 2,
+                    "creationDate": "02/02/2024 21:32",
+                    "lastQuotaDate": "03/06/2024 18:01",
+                    "logs": [
+                        "Se creó la compra. 02/02/2024 21:32",
+                        "Se editó la compra. 02/03/2024 12:50",
+                        "Se bajo una cuota.02/03/2024 13:35",
+                        "Se bajo una cuota.09/04/2024 18:08",
+                        "Se pago la ultima cuota. 03/06/2024 15:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "2quxyfBLX8l6MAPDMTIn",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 50000.0,
+                    "amountPerQuota": 50000.0,
+                    "nameOfProduct": "diezmo",
+                    "type": 2,
+                    "creationDate": "05/04/2024 17:47",
+                    "lastQuotaDate": "09/04/2024 21:08",
+                    "logs": [
+                        "Se creó la compra. 05/04/2024 17:47",
+                        "Se editó la compra. 05/04/2024 17:50",
+                        "Se pago la ultima cuota. 09/04/2024 18:08"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "4I6Dj49Q7E9Ga4t5ZYxZ",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 6,
+                    "totalAmount": 21000.0,
+                    "amountPerQuota": 3500.0,
+                    "nameOfProduct": "remera revolver",
+                    "type": 2,
+                    "creationDate": "04/08/2024 18:33",
+                    "lastQuotaDate": "25/02/2025 19:01",
+                    "logs": [
+                        "Se creó la compra. 04/08/2024 18:33",
+                        "Se bajo una cuota.29/08/2024 14:41",
+                        "Se bajo una cuota.01/10/2024 18:29",
+                        "Se bajo una cuota.04/11/2024 17:49",
+                        "Se bajo una cuota.28/11/2024 22:14",
+                        "Se pago una cuota.06/02/2025 16:45",
+                        "Se pago la ultima cuota. 25/02/2025 19:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "4rLMPNxY0sgHCcJz0vT9",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 25000.0,
+                    "amountPerQuota": 8333.333333333334,
+                    "nameOfProduct": "Short puma negro",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:07",
+                    "lastQuotaDate": "09/04/2024 21:08",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.01/02/2024 11:04",
+                        "Se bajo una cuota.02/03/2024 13:35",
+                        "Se pago la ultima cuota. 09/04/2024 18:08"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "7JtcFApoUzSnJGuXnwua",
+                    "currencyType": 1,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 26.0,
+                    "amountPerQuota": 26.0,
+                    "nameOfProduct": "diezmo nidus",
+                    "type": 2,
+                    "creationDate": "05/03/2024 18:46",
+                    "lastQuotaDate": "05/03/2024 22:24",
+                    "logs": [
+                        "Se creó la compra. 05/03/2024 18:46",
+                        "Se pago la ultima cuota. 05/03/2024 19:24"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "7deJLOVtwwdFUlIr4Mqy",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 6000.0,
+                    "amountPerQuota": 6000.0,
+                    "nameOfProduct": "2 lilos",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:19",
+                    "lastQuotaDate": "02/03/2024 16:35",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:19",
+                        "Se pago la ultima cuota. 02/03/2024 13:35"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "7novGYZE4hxi6OhaTn5S",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 12000.0,
+                    "amountPerQuota": 12000.0,
+                    "nameOfProduct": "Obra social",
+                    "type": 2,
+                    "creationDate": "05/04/2024 17:49",
+                    "lastQuotaDate": "09/04/2024 21:08",
+                    "logs": [
+                        "Se creó la compra. 05/04/2024 17:49",
+                        "Se pago la ultima cuota. 09/04/2024 18:08"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "8FQOHXF34dexyXjUSn4d",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 9000.0,
+                    "amountPerQuota": 9000.0,
+                    "nameOfProduct": "obra social febrero",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:19",
+                    "lastQuotaDate": "02/03/2024 16:35",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:19",
+                        "Se pago la ultima cuota. 02/03/2024 13:35"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "9buyBP3YxEqVqRwHG9N3",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 15000.0,
+                    "amountPerQuota": 15000.0,
+                    "nameOfProduct": "regalo pich",
+                    "type": 2,
+                    "creationDate": "23/11/2024 16:25",
+                    "lastQuotaDate": "29/11/2024 01:14",
+                    "logs": [
+                        "Se creó la compra. 23/11/2024 16:25",
+                        "Se pago la ultima cuota. 28/11/2024 22:14"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "9wQkhPPapbfkNAozPajt",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 9000.0,
+                    "amountPerQuota": 9000.0,
+                    "nameOfProduct": "Carne asado 16 de enero",
+                    "type": 2,
+                    "creationDate": "16/01/2025 14:45",
+                    "lastQuotaDate": "06/02/2025 16:45",
+                    "logs": [
+                        "Se creó la compra. 16/01/2025 14:45",
+                        "Se pago la ultima cuota. 06/02/2025 16:45"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:45",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "Aja4OnyhQwZMgVeP2KhS",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 14400.0,
+                    "amountPerQuota": 4800.0,
+                    "nameOfProduct": "Remera puma azul",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:07",
+                    "lastQuotaDate": "09/04/2024 21:08",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.01/02/2024 11:04",
+                        "Se bajo una cuota.02/03/2024 13:35",
+                        "Se pago la ultima cuota. 09/04/2024 18:08"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "CcPPmUVBKLcTXcJZ7SAn",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2000.0,
+                    "amountPerQuota": 2000.0,
+                    "nameOfProduct": "chicles farmacity",
+                    "type": 2,
+                    "creationDate": "02/02/2024 22:06",
+                    "lastQuotaDate": "03/02/2024 19:34",
+                    "logs": [
+                        "Se creó la compra. 02/02/2024 22:06",
+                        "Se pago la ultima cuota. 03/02/2024 16:34"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "E5k5Y7jaTeyzCbagBsPM",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 14900.0,
+                    "amountPerQuota": 4966.666666666667,
+                    "nameOfProduct": "pantuflas carouomo",
+                    "type": 2,
+                    "creationDate": "28/04/2024 15:55",
+                    "lastQuotaDate": "29/07/2024 21:03",
+                    "logs": [
+                        "Se creó la compra. 28/04/2024 15:55",
+                        "Se bajo una cuota.03/06/2024 15:01",
+                        "Se bajo una cuota.27/06/2024 14:29",
+                        "Se pago la ultima cuota. 29/07/2024 18:03"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "E6mlKYkOmVLZgnaxq94Z",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "Seña de los vidrios de los lentes",
+                    "type": 2,
+                    "creationDate": "20/01/2024 13:00",
+                    "lastQuotaDate": "22/01/2024 15:15",
+                    "logs": [
+                        "test",
+                        "Se agregó una cuota.2024-01-22 15:14:53.730288",
+                        "Se pago la ultima cuota. 2024-01-22 15:15:10.157405"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "E8JKSmBiW2OSaoXQofMQ",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 0,
+                    "totalAmount": 168000.0,
+                    "amountPerQuota": 168000.0,
+                    "nameOfProduct": "Diezmo marzo",
+                    "type": 0,
+                    "creationDate": "01/03/2025 21:04",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 01/03/2025 21:04"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "EtYVaGQzlxY2AbytaCyc",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 1000.0,
+                    "amountPerQuota": 1000.0,
+                    "nameOfProduct": "1k de chuca",
+                    "type": 3,
+                    "creationDate": "25/01/2025 05:45",
+                    "lastQuotaDate": "06/02/2025 16:45",
+                    "logs": [
+                        "Se creó la compra. 25/01/2025 05:45",
+                        "Se pago la ultima cuota. 06/02/2025 16:45"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:45",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "F8irEbOLho3yNGcGJcpW",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 81478.0,
+                    "amountPerQuota": 81478.0,
+                    "nameOfProduct": "Diezmo octubre",
+                    "type": 2,
+                    "creationDate": "04/11/2024 17:47",
+                    "lastQuotaDate": "29/11/2024 00:14",
+                    "logs": [
+                        "Se creó la compra. 04/11/2024 17:47",
+                        "Se pago la ultima cuota. 28/11/2024 21:14"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "FOfMLvVrsgeEJSs0JDqS",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5450.0,
+                    "amountPerQuota": 1816.6666666666667,
+                    "nameOfProduct": "medias carouomo",
+                    "type": 2,
+                    "creationDate": "28/04/2024 15:55",
+                    "lastQuotaDate": "29/07/2024 21:03",
+                    "logs": [
+                        "Se creó la compra. 28/04/2024 15:55",
+                        "Se bajo una cuota.03/06/2024 15:01",
+                        "Se bajo una cuota.27/06/2024 14:29",
+                        "Se pago la ultima cuota. 29/07/2024 18:03"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "G1HoRUwAy7SvDVSL34uL",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2500.0,
+                    "amountPerQuota": 2500.0,
+                    "nameOfProduct": "helado",
+                    "type": 2,
+                    "creationDate": "05/03/2024 18:36",
+                    "lastQuotaDate": "05/03/2024 22:24",
+                    "logs": [
+                        "Se creó la compra. 05/03/2024 18:36",
+                        "Se pago la ultima cuota. 05/03/2024 19:24"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "IIPdvFoFj9r0OUCbAnFq",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 69000.0,
+                    "amountPerQuota": 69000.0,
+                    "nameOfProduct": "diezmo julio ",
+                    "type": 2,
+                    "creationDate": "29/07/2024 17:52",
+                    "lastQuotaDate": "04/08/2024 21:33",
+                    "logs": [
+                        "Se creó la compra. 29/07/2024 17:52",
+                        "Se pago la ultima cuota. 04/08/2024 18:33"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "LOdWIt5cWsI8EWC7dwsb",
+                    "currencyType": 1,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 300.0,
+                    "amountPerQuota": 300.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 3,
+                    "creationDate": "25/01/2025 05:47",
+                    "lastQuotaDate": "06/02/2025 16:45",
+                    "logs": [
+                        "Se creó la compra. 25/01/2025 05:47",
+                        "Se pago la ultima cuota. 06/02/2025 16:45"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:45",
+                    "ignored": true,
+                    "image": null
+                },
+                {
+                    "id": "LwQKUO3Kgcp01Xkx8DIk",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 91500.0,
+                    "amountPerQuota": 91500.0,
+                    "nameOfProduct": "diezmo diciembre",
+                    "type": 2,
+                    "creationDate": "27/12/2024 15:34",
+                    "lastQuotaDate": "12/01/2025 22:42",
+                    "logs": [
+                        "Se creó la compra. 27/12/2024 15:34",
+                        "Se pago la ultima cuota. 12/01/2025 19:42"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "MI1q0sK9UWR8yXpwUmzs",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 23000.0,
+                    "amountPerQuota": 7666.666666666667,
+                    "nameOfProduct": "remera levis rojo piola",
+                    "type": 2,
+                    "creationDate": "02/02/2024 21:33",
+                    "lastQuotaDate": "29/04/2024 20:52",
+                    "logs": [
+                        "Se creó la compra. 02/02/2024 21:33",
+                        "Se bajo una cuota.02/03/2024 13:35",
+                        "Se bajo una cuota.09/04/2024 18:08",
+                        "Se pago la ultima cuota. 29/04/2024 17:52"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "NW91sn5vhmGa3iuNq337",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 6000.0,
+                    "amountPerQuota": 6000.0,
+                    "nameOfProduct": "Campamento ascona 2025",
+                    "type": 2,
+                    "creationDate": "16/01/2025 14:44",
+                    "lastQuotaDate": "06/02/2025 16:45",
+                    "logs": [
+                        "Se creó la compra. 16/01/2025 14:44",
+                        "Se pago la ultima cuota. 06/02/2025 16:45"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:45",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "OamcxT4cMyyTxDFLhU2o",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 3000.0,
+                    "amountPerQuota": 3000.0,
+                    "nameOfProduct": "Birras para lo de la tia",
+                    "type": 2,
+                    "creationDate": "16/01/2025 14:46",
+                    "lastQuotaDate": "06/02/2025 16:47",
+                    "logs": [
+                        "Se creó la compra. 16/01/2025 14:46",
+                        "Se pago la ultima cuota. 06/02/2025 16:47"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:47",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "OtrvibJuLnyhOre4AATH",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2400.0,
+                    "amountPerQuota": 2400.0,
+                    "nameOfProduct": "empanadas ",
+                    "type": 2,
+                    "creationDate": "08/03/2024 20:01",
+                    "lastQuotaDate": "09/04/2024 21:08",
+                    "logs": [
+                        "Se creó la compra. 08/03/2024 20:01",
+                        "Se pago la ultima cuota. 09/04/2024 18:08"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "OyoPLAaouYVtLRCS8NiG",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 95850.0,
+                    "amountPerQuota": 95850.0,
+                    "nameOfProduct": "luz algo asi",
+                    "type": 3,
+                    "creationDate": "25/01/2025 05:45",
+                    "lastQuotaDate": "06/02/2025 16:47",
+                    "logs": [
+                        "Se creó la compra. 25/01/2025 05:45",
+                        "Se pago la ultima cuota. 06/02/2025 16:47"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:47",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "PDVhqX4qIJVA6m55XGm2",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 75150.0,
+                    "amountPerQuota": 75150.0,
+                    "nameOfProduct": "diezmo",
+                    "type": 2,
+                    "creationDate": "01/10/2024 12:10",
+                    "lastQuotaDate": "01/10/2024 21:29",
+                    "logs": [
+                        "Se creó la compra. 01/10/2024 12:10",
+                        "Se editó la compra. 01/10/2024 18:28",
+                        "Se pago la ultima cuota. 01/10/2024 18:29"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "Qfa5w5L2piUsY2eaACwv",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 34500.0,
+                    "amountPerQuota": 34500.0,
+                    "nameOfProduct": "Diezmo mayo",
+                    "type": 2,
+                    "creationDate": "05/06/2024 14:28",
+                    "lastQuotaDate": "27/06/2024 17:29",
+                    "logs": [
+                        "Se creó la compra. 05/06/2024 14:28",
+                        "Se pago la ultima cuota. 27/06/2024 14:29"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "SyIDZdjJ0zDYm2i3DNI4",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "Prestamo 12 5 24",
+                    "type": 2,
+                    "creationDate": "12/05/2024 19:26",
+                    "lastQuotaDate": "03/06/2024 18:01",
+                    "logs": [
+                        "Se creó la compra. 12/05/2024 19:26",
+                        "Se pago la ultima cuota. 03/06/2024 15:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "UwAnlY9yWEOGq46EnpJN",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "28/08/2024 19:14",
+                    "lastQuotaDate": "29/08/2024 17:41",
+                    "logs": [
+                        "Se creó la compra. 28/08/2024 19:14",
+                        "Se pago la ultima cuota. 29/08/2024 14:41"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "UwWwyNM5Dyk7BkhowZPR",
+                    "currencyType": 1,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 35.0,
+                    "amountPerQuota": 35.0,
+                    "nameOfProduct": "diezmo enero",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:05",
+                    "lastQuotaDate": "01/02/2024 14:04",
+                    "logs": [
+                        "test",
+                        "Se pago la ultima cuota. 01/02/2024 11:04"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "XprmVuWfoWgOQpx4stZY",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 4800.0,
+                    "amountPerQuota": 4800.0,
+                    "nameOfProduct": "pan de pancho y papas",
+                    "type": 3,
+                    "creationDate": "15/02/2025 12:23",
+                    "lastQuotaDate": "25/02/2025 19:01",
+                    "logs": [
+                        "Se creó la compra. 15/02/2025 12:23",
+                        "Se pago la ultima cuota. 25/02/2025 19:01"
+                    ],
+                    "firstQuotaDate": "25/02/2025 19:01",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ZMZ78suzUcpBgcp2rkfq",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 81400.0,
+                    "amountPerQuota": 81400.0,
+                    "nameOfProduct": "Diezmo noviembre",
+                    "type": 2,
+                    "creationDate": "28/11/2024 21:16",
+                    "lastQuotaDate": "29/11/2024 01:14",
+                    "logs": [
+                        "Se creó la compra. 28/11/2024 21:16",
+                        "Se pago la ultima cuota. 28/11/2024 22:14"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "Zidt4H7J2gVdJ9ituhk0",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 6775.0,
+                    "amountPerQuota": 6775.0,
+                    "nameOfProduct": "Obra social mayo",
+                    "type": 2,
+                    "creationDate": "05/06/2024 14:28",
+                    "lastQuotaDate": "27/06/2024 17:29",
+                    "logs": [
+                        "Se creó la compra. 05/06/2024 14:28",
+                        "Se pago la ultima cuota. 27/06/2024 14:29"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ck9KLCg7ABaVbTlSQyRx",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 70000.0,
+                    "amountPerQuota": 23333.333333333332,
+                    "nameOfProduct": "Campera billabong invierno",
+                    "type": 2,
+                    "creationDate": "28/04/2024 15:54",
+                    "lastQuotaDate": "29/07/2024 21:03",
+                    "logs": [
+                        "Se creó la compra. 28/04/2024 15:54",
+                        "Se bajo una cuota.03/06/2024 15:01",
+                        "Se bajo una cuota.27/06/2024 14:29",
+                        "Se pago la ultima cuota. 29/07/2024 18:03"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "f5AVR5O8WmVBJgRg8Xg8",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 43000.0,
+                    "amountPerQuota": 43000.0,
+                    "nameOfProduct": "Diezmo junio",
+                    "type": 2,
+                    "creationDate": "27/06/2024 14:23",
+                    "lastQuotaDate": "27/06/2024 17:29",
+                    "logs": [
+                        "Se creó la compra. 27/06/2024 14:23",
+                        "Se pago la ultima cuota. 27/06/2024 14:29"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "fsZLLEJ01a1tvr7YAKFI",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 88485.0,
+                    "amountPerQuota": 88485.0,
+                    "nameOfProduct": "Diezmo febrero parte 1",
+                    "type": 2,
+                    "creationDate": "25/02/2025 18:57",
+                    "lastQuotaDate": "25/02/2025 19:01",
+                    "logs": [
+                        "Se creó la compra. 25/02/2025 18:57",
+                        "Se pago la ultima cuota. 25/02/2025 19:01"
+                    ],
+                    "firstQuotaDate": "25/02/2025 19:01",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "gKNh3fHkuVUUgzzIZHM0",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 35000.0,
+                    "amountPerQuota": 35000.0,
+                    "nameOfProduct": "zapatillas puma verde",
+                    "type": 2,
+                    "creationDate": "02/02/2024 22:05",
+                    "lastQuotaDate": "03/02/2024 19:34",
+                    "logs": [
+                        "Se creó la compra. 02/02/2024 22:05",
+                        "Se pago la ultima cuota. 03/02/2024 16:34"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "gPS868z77fmTQpj7lB2P",
+                    "currencyType": 0,
+                    "amountOfQuotas": 12,
+                    "quotasPayed": 6,
+                    "totalAmount": 117400.0,
+                    "amountPerQuota": 9783.333333333334,
+                    "nameOfProduct": "zapas vans",
+                    "type": 0,
+                    "creationDate": "11/08/2024 18:26",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 11/08/2024 18:26",
+                        "Se bajo una cuota.29/08/2024 14:41",
+                        "Se bajo una cuota.01/10/2024 18:29",
+                        "Se bajo una cuota.04/11/2024 17:49",
+                        "Se bajo una cuota.28/11/2024 22:14",
+                        "Se pago una cuota.06/02/2025 16:47",
+                        "Se pago una cuota.25/02/2025 19:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "gqLHhtW4OJ4GwLFm4WMK",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 1000.0,
+                    "amountPerQuota": 1000.0,
+                    "nameOfProduct": "no se",
+                    "type": 2,
+                    "creationDate": "23/11/2024 16:26",
+                    "lastQuotaDate": "29/11/2024 01:14",
+                    "logs": [
+                        "Se creó la compra. 23/11/2024 16:26",
+                        "Se pago la ultima cuota. 28/11/2024 22:14"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ih95dOW2BCiBLSmfC0jp",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 68000.0,
+                    "amountPerQuota": 68000.0,
+                    "nameOfProduct": "Diezmo febrero parte 2",
+                    "type": 2,
+                    "creationDate": "01/03/2025 20:59",
+                    "lastQuotaDate": "01/03/2025 20:59",
+                    "logs": [
+                        "Se creó la compra. 01/03/2025 20:59",
+                        "Se pago la ultima cuota. 01/03/2025 20:59"
+                    ],
+                    "firstQuotaDate": "01/03/2025 20:59",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "jHVHjnhO86TrqFLoT6b2",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 15000.0,
+                    "amountPerQuota": 15000.0,
+                    "nameOfProduct": "Segundo pago Vidrios lentes",
+                    "type": 2,
+                    "creationDate": "22/01/2024 12:04",
+                    "lastQuotaDate": "22/01/2024 15:15",
+                    "logs": [
+                        "Se creó la compra. 2024-01-22 15:04:11.022359}",
+                        "Se pago la ultima cuota. 2024-01-22 15:04:21.777027",
+                        "Se agregó una cuota.2024-01-22 15:14:59.613278",
+                        "Se pago la ultima cuota. 2024-01-22 15:15:19.493822"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "l9c2Nm42ZiiPe1UQnXLV",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 0,
+                    "totalAmount": 20000.0,
+                    "amountPerQuota": 20000.0,
+                    "nameOfProduct": "1 pizza y media del lilo",
+                    "type": 1,
+                    "creationDate": "01/03/2025 22:00",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 01/03/2025 22:00"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "lupEC3kujN4eM4PtdU6n",
+                    "currencyType": 1,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 300.0,
+                    "amountPerQuota": 300.0,
+                    "nameOfProduct": "ahorro enero",
+                    "type": 3,
+                    "creationDate": "25/01/2025 05:47",
+                    "lastQuotaDate": "05/02/2025 22:36",
+                    "logs": [
+                        "Se creó la compra. 25/01/2025 05:47",
+                        "Se pago la ultima cuota. 05/02/2025 22:36"
+                    ],
+                    "firstQuotaDate": "05/02/2025 22:36",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "maIvYCa0q7on8sjDsuND",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 75000.0,
+                    "amountPerQuota": 75000.0,
+                    "nameOfProduct": "diezmo",
+                    "type": 2,
+                    "creationDate": "04/08/2024 01:06",
+                    "lastQuotaDate": "29/08/2024 17:41",
+                    "logs": [
+                        "Se creó la compra. 04/08/2024 01:06",
+                        "Se editó la compra. 29/08/2024 14:36",
+                        "Se editó la compra. 29/08/2024 14:36",
+                        "Se pago la ultima cuota. 29/08/2024 14:41"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "nfM6vQAil9F7PqbEfX0q",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 87000.0,
+                    "amountPerQuota": 87000.0,
+                    "nameOfProduct": "diezmo enero",
+                    "type": 2,
+                    "creationDate": "05/02/2025 22:36",
+                    "lastQuotaDate": "06/02/2025 16:47",
+                    "logs": [
+                        "Se creó la compra. 05/02/2025 22:36",
+                        "Se pago la ultima cuota. 06/02/2025 16:47"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:47",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "oE5s4fTMYcVxbK3gqL85",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 1000.0,
+                    "amountPerQuota": 1000.0,
+                    "nameOfProduct": "mil",
+                    "type": 2,
+                    "creationDate": "23/05/2024 13:09",
+                    "lastQuotaDate": "03/06/2024 18:01",
+                    "logs": [
+                        "Se creó la compra. 23/05/2024 13:09",
+                        "Se pago la ultima cuota. 03/06/2024 15:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "oHM1PLI1rZxhiqD3FbyB",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "obra social enero",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:05",
+                    "lastQuotaDate": "22/01/2024 15:15",
+                    "logs": [
+                        "test",
+                        "Se agregó una cuota.2024-01-22 15:15:01.589796",
+                        "Se pago la ultima cuota. 2024-01-22 15:15:26.493162"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ognu1chXcmEUwMJ5CTyd",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 3900.0,
+                    "amountPerQuota": 3900.0,
+                    "nameOfProduct": "hamburguesa ",
+                    "type": 2,
+                    "creationDate": "27/04/2024 13:22",
+                    "lastQuotaDate": "29/04/2024 20:52",
+                    "logs": [
+                        "Se creó la compra. 27/04/2024 13:22",
+                        "Se pago la ultima cuota. 29/04/2024 17:52"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "vOuzRAGneH4NkijfqExE",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 32000.0,
+                    "amountPerQuota": 32000.0,
+                    "nameOfProduct": "diezmo abril",
+                    "type": 2,
+                    "creationDate": "29/04/2024 17:29",
+                    "lastQuotaDate": "29/04/2024 22:23",
+                    "logs": [
+                        "Se creó la compra. 29/04/2024 17:29",
+                        "Se pago la ultima cuota. 29/04/2024 19:23"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "vR9YffWOTRxpIfZzpIlF",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 39000.0,
+                    "amountPerQuota": 6500.0,
+                    "nameOfProduct": "Chanclas Vans",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:08",
+                    "lastQuotaDate": "29/07/2024 21:03",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.01/02/2024 11:04",
+                        "Se bajo una cuota.02/03/2024 13:35",
+                        "Se bajo una cuota.09/04/2024 18:08",
+                        "Se bajo una cuota.03/06/2024 15:00",
+                        "Se bajo una cuota.27/06/2024 14:29",
+                        "Se pago la ultima cuota. 29/07/2024 18:03"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "vyNoL3foUg9nF93G4Hbm",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 9500.0,
+                    "amountPerQuota": 9500.0,
+                    "nameOfProduct": "prestamo y pelu",
+                    "type": 2,
+                    "creationDate": "14/04/2024 13:22",
+                    "lastQuotaDate": "29/04/2024 20:53",
+                    "logs": [
+                        "Se creó la compra. 14/04/2024 13:22",
+                        "Se pago la ultima cuota. 29/04/2024 17:53"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "wig23P3v8nYlZospT6wM",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 6300.0,
+                    "amountPerQuota": 6300.0,
+                    "nameOfProduct": "Autorización de la colonoscopia ",
+                    "type": 2,
+                    "creationDate": "09/05/2024 21:27",
+                    "lastQuotaDate": "03/06/2024 18:00",
+                    "logs": [
+                        "Se creó la compra. 09/05/2024 21:27",
+                        "Se pago la ultima cuota. 03/06/2024 15:00"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "wqdq1avKxJUblzAfBvvA",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 4000.0,
+                    "amountPerQuota": 4000.0,
+                    "nameOfProduct": "Yerba kurupi",
+                    "type": 2,
+                    "creationDate": "10/02/2025 21:59",
+                    "lastQuotaDate": "25/02/2025 19:01",
+                    "logs": [
+                        "Se creó la compra. 10/02/2025 21:59",
+                        "Se pago la ultima cuota. 25/02/2025 19:01"
+                    ],
+                    "firstQuotaDate": "25/02/2025 19:01",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "xs1SdxAnMIYKT7nXVmpr",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 12000.0,
+                    "amountPerQuota": 12000.0,
+                    "nameOfProduct": "Obra social abril",
+                    "type": 2,
+                    "creationDate": "29/04/2024 17:47",
+                    "lastQuotaDate": "29/04/2024 22:23",
+                    "logs": [
+                        "Se creó la compra. 29/04/2024 17:47",
+                        "Se pago la ultima cuota. 29/04/2024 19:23"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "xs2H6NELThyclhwYcCdS",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 3500.0,
+                    "amountPerQuota": 3500.0,
+                    "nameOfProduct": "hamburguesa wendys",
+                    "type": 2,
+                    "creationDate": "02/02/2024 22:05",
+                    "lastQuotaDate": "03/02/2024 19:34",
+                    "logs": [
+                        "Se creó la compra. 02/02/2024 22:05",
+                        "Se pago la ultima cuota. 03/02/2024 16:34"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "bKERpGxlKeOt2zLOxSky",
+            "name": "Bastian",
+            "logs": [
+                "test",
+                "Se creó la compra Campamento ascona 2025. 16/01/2025 14:45",
+                "Se creó la compra prestamo enero.25/01/2025 05:46",
+                "Se creó la compra remera darkbasics.25/02/2025 18:41",
+                "Se creó la compra Youtube.25/02/2025 18:48"
+            ],
+            "compras": [
+                {
+                    "id": "3tfHRl6sPTL7xMrXSzeV",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 2266.0,
+                    "amountPerQuota": 2266.0,
+                    "nameOfProduct": "Campamento ascona 2025",
+                    "type": 2,
+                    "creationDate": "16/01/2025 14:45",
+                    "lastQuotaDate": "06/02/2025 16:40",
+                    "logs": [
+                        "Se creó la compra. 16/01/2025 14:45",
+                        "Se pago la ultima cuota. 06/02/2025 16:40"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:40",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "6znLBUjgHZCzFAYf2BGe",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 12480.0,
+                    "amountPerQuota": 6240.0,
+                    "nameOfProduct": "Bermuda penguin",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:11",
+                    "lastQuotaDate": "02/03/2024 16:01",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.01/02/2024 10:59",
+                        "Se pago la ultima cuota. 02/03/2024 13:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "8V9FTvDr4JK6xV6aSKP0",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 7000.0,
+                    "amountPerQuota": 7000.0,
+                    "nameOfProduct": "1 lilo",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:20",
+                    "lastQuotaDate": "02/03/2024 16:01",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:20",
+                        "Se pago la ultima cuota. 02/03/2024 13:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "BAuqQvBeWnC714gWh9lw",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2080.0,
+                    "amountPerQuota": 2080.0,
+                    "nameOfProduct": "sanguche de mila",
+                    "type": 2,
+                    "creationDate": "12/04/2024 08:16",
+                    "lastQuotaDate": "29/04/2024 20:43",
+                    "logs": [
+                        "Se creó la compra. 12/04/2024 08:16",
+                        "Se pago la ultima cuota. 29/04/2024 17:43"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "M3BZBHgm1VYEBRRCcOLv",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 14400.0,
+                    "amountPerQuota": 14400.0,
+                    "nameOfProduct": "remera darkbasics",
+                    "type": 2,
+                    "creationDate": "25/02/2025 18:41",
+                    "lastQuotaDate": "25/02/2025 18:49",
+                    "logs": [
+                        "Se creó la compra. 25/02/2025 18:41",
+                        "Se pago la ultima cuota. 25/02/2025 18:49"
+                    ],
+                    "firstQuotaDate": "25/02/2025 18:49",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "RTqpVYcVybpvUT7AKMSL",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 31000.0,
+                    "amountPerQuota": 5166.666666666667,
+                    "nameOfProduct": "pantalón puma negro",
+                    "type": 2,
+                    "creationDate": "04/02/2024 19:55",
+                    "lastQuotaDate": "29/07/2024 21:00",
+                    "logs": [
+                        "Se creó la compra. 04/02/2024 19:55",
+                        "Se bajo una cuota.02/03/2024 13:01",
+                        "Se bajo una cuota.09/04/2024 18:09",
+                        "Se bajo una cuota.29/04/2024 17:45",
+                        "Se bajo una cuota.03/06/2024 15:03",
+                        "Se bajo una cuota.27/06/2024 14:22",
+                        "Se pago la ultima cuota. 29/07/2024 18:00"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "Rf06tqJBakKTZYr31wOd",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 8700.0,
+                    "amountPerQuota": 2900.0,
+                    "nameOfProduct": "cinturón negro",
+                    "type": 2,
+                    "creationDate": "05/04/2024 17:26",
+                    "lastQuotaDate": "03/06/2024 18:03",
+                    "logs": [
+                        "Se creó la compra. 05/04/2024 17:26",
+                        "Se bajo una cuota.09/04/2024 18:09",
+                        "Se bajo una cuota.29/04/2024 17:45",
+                        "Se pago la ultima cuota. 03/06/2024 15:03"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "S6bqTYx9nFjxlsrnVRxM",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 15000.0,
+                    "amountPerQuota": 15000.0,
+                    "nameOfProduct": "prestamo enero",
+                    "type": 2,
+                    "creationDate": "25/01/2025 05:46",
+                    "lastQuotaDate": "06/02/2025 16:40",
+                    "logs": [
+                        "Se creó la compra. 25/01/2025 05:46",
+                        "Se pago la ultima cuota. 06/02/2025 16:40"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:40",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "YIhOZDpxxWT1bUjNoaWk",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 3333.0,
+                    "amountPerQuota": 3333.0,
+                    "nameOfProduct": "Riñonera ripcurl negra",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:10",
+                    "lastQuotaDate": "01/02/2024 13:59",
+                    "logs": [
+                        "test",
+                        "Se pago la ultima cuota. 01/02/2024 10:59"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "dma9h266rH2zitIiaLjf",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 1000.0,
+                    "amountPerQuota": 1000.0,
+                    "nameOfProduct": "Youtube",
+                    "type": 2,
+                    "creationDate": "25/02/2025 18:48",
+                    "lastQuotaDate": "25/02/2025 18:49",
+                    "logs": [
+                        "Se creó la compra. 25/02/2025 18:48",
+                        "Se pago la ultima cuota. 25/02/2025 18:49"
+                    ],
+                    "firstQuotaDate": "25/02/2025 18:49",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "h6xlWSZtuKGgrpq85SjV",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 27300.0,
+                    "amountPerQuota": 9100.0,
+                    "nameOfProduct": "short puma negro",
+                    "type": 2,
+                    "creationDate": "04/08/2024 18:37",
+                    "lastQuotaDate": "04/11/2024 20:46",
+                    "logs": [
+                        "Se creó la compra. 04/08/2024 18:37",
+                        "Se bajo una cuota.29/08/2024 14:44",
+                        "Se bajo una cuota.01/10/2024 18:27",
+                        "Se pago la ultima cuota. 04/11/2024 17:46"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "kWofRGlPECpjNVgnHQZB",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 13110.0,
+                    "amountPerQuota": 13110.0,
+                    "nameOfProduct": "creatina",
+                    "type": 2,
+                    "creationDate": "02/03/2024 13:01",
+                    "lastQuotaDate": "05/03/2024 21:33",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 13:01",
+                        "Se pago la ultima cuota. 05/03/2024 18:33"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "q9lAKoS0lgT5xlNRuv33",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 6,
+                    "totalAmount": 56940.0,
+                    "amountPerQuota": 9490.0,
+                    "nameOfProduct": "3 calzones revolver",
+                    "type": 2,
+                    "creationDate": "04/08/2024 18:39",
+                    "lastQuotaDate": "06/02/2025 16:40",
+                    "logs": [
+                        "Se creó la compra. 04/08/2024 18:39",
+                        "Se bajo una cuota.29/08/2024 14:44",
+                        "Se editó la compra. 30/08/2024 13:05",
+                        "Se bajo una cuota.30/08/2024 13:05",
+                        "Se bajo una cuota.01/10/2024 18:27",
+                        "Se bajo una cuota.04/11/2024 17:46",
+                        "Se bajo una cuota.28/11/2024 22:09",
+                        "Se bajo una cuota.27/12/2024 15:29",
+                        "Se pago la ultima cuota. 06/02/2025 16:40"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "s2ylvGaJ0T76HMxe7rlA",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 24800.0,
+                    "amountPerQuota": 4133.333333333333,
+                    "nameOfProduct": "Remeras Serbasics",
+                    "type": 2,
+                    "creationDate": "05/04/2024 17:29",
+                    "lastQuotaDate": "29/08/2024 17:44",
+                    "logs": [
+                        "Se creó la compra. 05/04/2024 17:29",
+                        "Se bajo una cuota.09/04/2024 18:09",
+                        "Se bajo una cuota.29/04/2024 17:46",
+                        "Se bajo una cuota.03/06/2024 15:03",
+                        "Se bajo una cuota.27/06/2024 14:22",
+                        "Se bajo una cuota.29/07/2024 18:00",
+                        "Se pago la ultima cuota. 29/08/2024 14:44"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "wLon4VQTiZrj1kTAqzTT",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 6000.0,
+                    "amountPerQuota": 6000.0,
+                    "nameOfProduct": "corbata",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:22",
+                    "lastQuotaDate": "02/03/2024 16:01",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:22",
+                        "Se pago la ultima cuota. 02/03/2024 13:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "g71UGAGaJwP5mSoGNNJO",
+            "name": "Vieja",
+            "logs": [
+                "test",
+                "Se creó la compra Plata para medialunas.06/02/2025 16:48"
+            ],
+            "compras": [
+                {
+                    "id": "09Hw98WnoWE5a3MWioFu",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "puebla",
+                    "type": 2,
+                    "creationDate": "26/06/2024 09:34",
+                    "lastQuotaDate": "27/06/2024 17:31",
+                    "logs": [
+                        "Se creó la compra. 26/06/2024 09:34",
+                        "Se pago la ultima cuota. 27/06/2024 14:31"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "2RHavLlBgc7AEB9zz1yt",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 6,
+                    "totalAmount": 60000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "jean baggy",
+                    "type": 2,
+                    "creationDate": "04/08/2024 01:14",
+                    "lastQuotaDate": "06/02/2025 16:43",
+                    "logs": [
+                        "Se creó la compra. 04/08/2024 01:14",
+                        "Se bajo una cuota.29/08/2024 14:46",
+                        "Se bajo una cuota.01/10/2024 18:31",
+                        "Se bajo una cuota.02/11/2024 18:23",
+                        "Se bajo una cuota.28/11/2024 22:06",
+                        "Se bajo una cuota.27/12/2024 15:25",
+                        "Se pago la ultima cuota. 06/02/2025 16:43"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "3KS70iq6hHz2Qm5ZOXQZ",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 70300.0,
+                    "amountPerQuota": 11716.666666666666,
+                    "nameOfProduct": "zapas puma blancas",
+                    "type": 2,
+                    "creationDate": "08/03/2024 20:00",
+                    "lastQuotaDate": "29/08/2024 17:46",
+                    "logs": [
+                        "Se creó la compra. 08/03/2024 20:00",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se bajo una cuota.03/06/2024 15:06",
+                        "Se bajo una cuota.27/06/2024 14:31",
+                        "Se bajo una cuota.29/07/2024 18:01",
+                        "Se pago la ultima cuota. 29/08/2024 14:46"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "4DqQrdrJY1lp0UtN1MFd",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2000.0,
+                    "amountPerQuota": 2000.0,
+                    "nameOfProduct": "prestamo consulta medica",
+                    "type": 2,
+                    "creationDate": "26/04/2024 19:18",
+                    "lastQuotaDate": "29/04/2024 20:42",
+                    "logs": [
+                        "Se creó la compra. 26/04/2024 19:18",
+                        "Se pago la ultima cuota. 29/04/2024 17:42"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "4iV7cMap4xRhPG2teFgK",
+                    "currencyType": 0,
+                    "amountOfQuotas": 24,
+                    "quotasPayed": 6,
+                    "totalAmount": 84000.0,
+                    "amountPerQuota": 3500.0,
+                    "nameOfProduct": "dep",
+                    "type": 0,
+                    "creationDate": "25/09/2024 18:56",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 25/09/2024 18:56",
+                        "Se bajo una cuota.01/10/2024 18:31",
+                        "Se bajo una cuota.02/11/2024 18:23",
+                        "Se bajo una cuota.28/11/2024 22:06",
+                        "Se bajo una cuota.27/12/2024 15:25",
+                        "Se pago una cuota.06/02/2025 16:43",
+                        "Se pago una cuota.25/02/2025 18:47"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "4xq23A1ihbXRaPxUKhzt",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 52000.0,
+                    "amountPerQuota": 13000.0,
+                    "nameOfProduct": "2 remeras eyelit",
+                    "type": 2,
+                    "creationDate": "13/07/2024 11:20",
+                    "lastQuotaDate": "02/11/2024 21:23",
+                    "logs": [
+                        "Se creó la compra. 13/07/2024 11:20",
+                        "Se bajo una cuota.29/07/2024 18:01",
+                        "Se bajo una cuota.29/08/2024 14:46",
+                        "Se bajo una cuota.01/10/2024 18:31",
+                        "Se pago la ultima cuota. 02/11/2024 18:23"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "7QNkte3TtjDfQ66ZpjPD",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 7000.0,
+                    "amountPerQuota": 7000.0,
+                    "nameOfProduct": "celu",
+                    "type": 2,
+                    "creationDate": "01/06/2024 09:20",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 01/06/2024 09:20",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "7SykkQ3XGKVptzEfbuCr",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "10k q pedí para ir a avellaneda",
+                    "type": 2,
+                    "creationDate": "01/02/2024 10:53",
+                    "lastQuotaDate": "01/02/2024 14:00",
+                    "logs": [
+                        "Se creó la compra. 01/02/2024 10:53",
+                        "Se pago la ultima cuota. 01/02/2024 11:00"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "AnD7pFQYzYaJeSv15oIw",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 20000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "Camisa negra",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:09",
+                    "lastQuotaDate": "02/03/2024 16:03",
+                    "logs": [
+                        "test",
+                        "Se bajo una cuota.01/02/2024 11:00",
+                        "Se pago la ultima cuota. 02/03/2024 13:03"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "CL1npGQh8fyJbVWGH6sL",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 1500.0,
+                    "amountPerQuota": 1500.0,
+                    "nameOfProduct": "pelu",
+                    "type": 2,
+                    "creationDate": "28/11/2024 22:04",
+                    "lastQuotaDate": "29/11/2024 01:06",
+                    "logs": [
+                        "Se creó la compra. 28/11/2024 22:04",
+                        "Se pago la ultima cuota. 28/11/2024 22:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "G79opu7MIv3mGZTPCWhx",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "Plata para medialunas",
+                    "type": 2,
+                    "creationDate": "06/02/2025 16:48",
+                    "lastQuotaDate": "06/02/2025 16:48",
+                    "logs": [
+                        "Se creó la compra. 06/02/2025 16:48",
+                        "Se pago la ultima cuota. 06/02/2025 16:48"
+                    ],
+                    "firstQuotaDate": "06/02/2025 16:48",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "GEOxMzbzgSDACVMSJgDe",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 30000.0,
+                    "amountPerQuota": 30000.0,
+                    "nameOfProduct": "Prestamo",
+                    "type": 2,
+                    "creationDate": "15/05/2024 17:58",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 15/05/2024 17:58",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "HnYbCA2xnaN7QuOiwJ7Y",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 201450.0,
+                    "amountPerQuota": 50362.5,
+                    "nameOfProduct": "Traje y camisa",
+                    "type": 2,
+                    "creationDate": "02/03/2024 12:21",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 02/03/2024 12:21",
+                        "Se bajo una cuota.02/03/2024 13:04",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ITwxrcKQ53YrpPiOOFnL",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 7000.0,
+                    "amountPerQuota": 7000.0,
+                    "nameOfProduct": "Regalo nicolas billetera y gorra",
+                    "type": 2,
+                    "creationDate": "02/04/2024 10:00",
+                    "lastQuotaDate": "27/06/2024 17:32",
+                    "logs": [
+                        "Se creó la compra. 02/04/2024 10:00",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se pago la ultima cuota. 03/06/2024 15:06",
+                        "Se editó la compra. 03/06/2024 15:21",
+                        "Se agregó una cuota.03/06/2024 15:21",
+                        "Se editó la compra. 03/06/2024 15:22",
+                        "Se editó la compra. 03/06/2024 15:22",
+                        "Se editó la compra. 03/06/2024 15:22",
+                        "Se editó la compra. 03/06/2024 15:22",
+                        "Se pago la ultima cuota. 27/06/2024 14:32"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "JInr2nKdnRZelsiAE9OS",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 7500.0,
+                    "amountPerQuota": 1250.0,
+                    "nameOfProduct": "medias puma blancas",
+                    "type": 2,
+                    "creationDate": "08/03/2024 20:01",
+                    "lastQuotaDate": "29/08/2024 17:46",
+                    "logs": [
+                        "Se creó la compra. 08/03/2024 20:01",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se bajo una cuota.03/06/2024 15:06",
+                        "Se bajo una cuota.27/06/2024 14:32",
+                        "Se bajo una cuota.29/07/2024 18:01",
+                        "Se pago la ultima cuota. 29/08/2024 14:46"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "NjtXDiWyaWeHM2dan7H2",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "nafta",
+                    "type": 2,
+                    "creationDate": "28/11/2024 22:03",
+                    "lastQuotaDate": "29/11/2024 01:06",
+                    "logs": [
+                        "Se creó la compra. 28/11/2024 22:03",
+                        "Se pago la ultima cuota. 28/11/2024 22:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "O3yVF36dhTCI60yC5gYX",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 11000.0,
+                    "amountPerQuota": 11000.0,
+                    "nameOfProduct": "Pantalones ripcurl",
+                    "type": 2,
+                    "creationDate": "19/01/2024 23:09",
+                    "lastQuotaDate": "01/02/2024 14:00",
+                    "logs": [
+                        "test",
+                        "Se pago la ultima cuota. 01/02/2024 11:00"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "QTG7eACxoUEoYpz5A1aS",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2000.0,
+                    "amountPerQuota": 2000.0,
+                    "nameOfProduct": "regalo lightdata",
+                    "type": 2,
+                    "creationDate": "07/06/2024 11:58",
+                    "lastQuotaDate": "27/06/2024 17:32",
+                    "logs": [
+                        "Se creó la compra. 07/06/2024 11:58",
+                        "Se pago la ultima cuota. 27/06/2024 14:32"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "U1HhCAisdMjQY2q7zvAU",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 55000.0,
+                    "amountPerQuota": 18333.333333333332,
+                    "nameOfProduct": "buzo vans",
+                    "type": 2,
+                    "creationDate": "02/04/2024 09:57",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 02/04/2024 09:57",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "WmgkGOMgwneTz1gtMZZD",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5200.0,
+                    "amountPerQuota": 5200.0,
+                    "nameOfProduct": "burguer",
+                    "type": 2,
+                    "creationDate": "09/07/2024 20:53",
+                    "lastQuotaDate": "29/07/2024 21:01",
+                    "logs": [
+                        "Se creó la compra. 09/07/2024 20:53",
+                        "Se pago la ultima cuota. 29/07/2024 18:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "XSiYvLFkoQCTxbD7rZ0o",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 8000.0,
+                    "amountPerQuota": 8000.0,
+                    "nameOfProduct": "jardin",
+                    "type": 2,
+                    "creationDate": "23/05/2024 13:09",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 23/05/2024 13:09",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "Z0ZXKoQcHPMF7iiOutlG",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 25000.0,
+                    "amountPerQuota": 25000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "03/05/2024 17:31",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 03/05/2024 17:31",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "eDhsnL7wkKqfHKNoNwy9",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 3500.0,
+                    "amountPerQuota": 3500.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "21/03/2024 08:26",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 21/03/2024 08:26",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ffrjbLRSHM1PaE0TKFhN",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 15000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "Pantalón pijama azul",
+                    "type": 2,
+                    "creationDate": "08/06/2024 18:53",
+                    "lastQuotaDate": "29/08/2024 17:46",
+                    "logs": [
+                        "Se creó la compra. 08/06/2024 18:53",
+                        "Se bajo una cuota.27/06/2024 14:32",
+                        "Se bajo una cuota.29/07/2024 18:01",
+                        "Se pago la ultima cuota. 29/08/2024 14:46"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "gD0vviRdo492QoW0moDn",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 3333.3333333333335,
+                    "nameOfProduct": "Regalo viejo",
+                    "type": 2,
+                    "creationDate": "08/06/2024 18:52",
+                    "lastQuotaDate": "29/08/2024 17:46",
+                    "logs": [
+                        "Se creó la compra. 08/06/2024 18:52",
+                        "Se bajo una cuota.27/06/2024 14:32",
+                        "Se bajo una cuota.29/07/2024 18:01",
+                        "Se pago la ultima cuota. 29/08/2024 14:46"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "gRWKV16FfpFle7BwSILx",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2700.0,
+                    "amountPerQuota": 2700.0,
+                    "nameOfProduct": "consulta guardia",
+                    "type": 2,
+                    "creationDate": "23/03/2024 17:28",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 23/03/2024 17:28",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "hzVa08RqaU2RnXY30z4i",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "Crunchy agosto",
+                    "type": 2,
+                    "creationDate": "01/10/2024 12:14",
+                    "lastQuotaDate": "01/10/2024 21:31",
+                    "logs": [
+                        "Se creó la compra. 01/10/2024 12:14",
+                        "Se pago la ultima cuota. 01/10/2024 18:31"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "jQsugDIII9b7X9pgVdvQ",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "23/03/2024 17:28",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 23/03/2024 17:28",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "jndu4skM8lYZ8KMDSPgN",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 28000.0,
+                    "amountPerQuota": 28000.0,
+                    "nameOfProduct": "Da Vinci marzo",
+                    "type": 2,
+                    "creationDate": "12/03/2024 19:40",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 12/03/2024 19:40",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "mRmcQJrQBdhuhkctlmdp",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 20600.0,
+                    "amountPerQuota": 20600.0,
+                    "nameOfProduct": "Análisis",
+                    "type": 2,
+                    "creationDate": "05/04/2024 17:47",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 05/04/2024 17:47",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "nClP2zYSnGIbym7SIq8p",
+                    "currencyType": 0,
+                    "amountOfQuotas": 6,
+                    "quotasPayed": 4,
+                    "totalAmount": 8500.0,
+                    "amountPerQuota": 1416.6666666666667,
+                    "nameOfProduct": "medias puma",
+                    "type": 0,
+                    "creationDate": "23/11/2024 16:28",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 23/11/2024 16:28",
+                        "Se bajo una cuota.28/11/2024 22:06",
+                        "Se bajo una cuota.27/12/2024 15:25",
+                        "Se pago una cuota.06/02/2025 16:43",
+                        "Se pago una cuota.25/02/2025 18:47"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "nWSghtiRt5dnWnj5XJx1",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 16000.0,
+                    "amountPerQuota": 16000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "24/06/2024 17:28",
+                    "lastQuotaDate": "27/06/2024 17:32",
+                    "logs": [
+                        "Se creó la compra. 24/06/2024 17:28",
+                        "Se pago la ultima cuota. 27/06/2024 14:32"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "nt4H13VfNyGYJxu7APhq",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "electrocardiograma ",
+                    "type": 2,
+                    "creationDate": "13/06/2024 19:50",
+                    "lastQuotaDate": "27/06/2024 17:32",
+                    "logs": [
+                        "Se creó la compra. 13/06/2024 19:50",
+                        "Se pago la ultima cuota. 27/06/2024 14:32"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "pvEQZh387I5Wi0GisG30",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 14100.0,
+                    "amountPerQuota": 4700.0,
+                    "nameOfProduct": "remera puma gris",
+                    "type": 2,
+                    "creationDate": "02/04/2024 09:58",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 02/04/2024 09:58",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "pwY7IqwGT87NwRAGYqwQ",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "27/03/2024 07:59",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 27/03/2024 07:59",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "s2EnSLEuIcyckythGht3",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 6000.0,
+                    "amountPerQuota": 6000.0,
+                    "nameOfProduct": "pizza jardin",
+                    "type": 2,
+                    "creationDate": "29/07/2024 18:06",
+                    "lastQuotaDate": "04/08/2024 21:17",
+                    "logs": [
+                        "Se creó la compra. 29/07/2024 18:06",
+                        "Se pago la ultima cuota. 04/08/2024 18:17"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "sBeExN8zTAv3F0AqJJSY",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 5000.0,
+                    "amountPerQuota": 5000.0,
+                    "nameOfProduct": "crunchy septiembre",
+                    "type": 2,
+                    "creationDate": "01/10/2024 12:14",
+                    "lastQuotaDate": "01/10/2024 21:31",
+                    "logs": [
+                        "Se creó la compra. 01/10/2024 12:14",
+                        "Se pago la ultima cuota. 01/10/2024 18:31"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "sEVixSj7Ehau6j9OOMxM",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 7000.0,
+                    "amountPerQuota": 7000.0,
+                    "nameOfProduct": "pelu",
+                    "type": 2,
+                    "creationDate": "12/07/2024 18:13",
+                    "lastQuotaDate": "29/07/2024 21:01",
+                    "logs": [
+                        "Se creó la compra. 12/07/2024 18:13",
+                        "Se pago la ultima cuota. 29/07/2024 18:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "sTbwywaGYtNvQL8m9i9P",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 2500.0,
+                    "amountPerQuota": 2500.0,
+                    "nameOfProduct": "lilo",
+                    "type": 2,
+                    "creationDate": "27/12/2024 15:23",
+                    "lastQuotaDate": "27/12/2024 18:25",
+                    "logs": [
+                        "Se creó la compra. 27/12/2024 15:23",
+                        "Se pago la ultima cuota. 27/12/2024 15:25"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "uFqGrtpsXLOMUw9M2xrK",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "prestamo",
+                    "type": 2,
+                    "creationDate": "20/07/2024 12:53",
+                    "lastQuotaDate": "29/07/2024 21:01",
+                    "logs": [
+                        "Se creó la compra. 20/07/2024 12:53",
+                        "Se pago la ultima cuota. 29/07/2024 18:01"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "utZbwyNa5wWcIWfKEpJs",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 47000.0,
+                    "amountPerQuota": 15666.666666666666,
+                    "nameOfProduct": "Billetera Ripcurl",
+                    "type": 2,
+                    "creationDate": "02/04/2024 09:59",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 02/04/2024 09:59",
+                        "Se bajo una cuota.09/04/2024 18:11",
+                        "Se bajo una cuota.29/04/2024 17:42",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "uxe7IgmNvkGdGzuLrFri",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 4400.0,
+                    "amountPerQuota": 4400.0,
+                    "nameOfProduct": "pastillas",
+                    "type": 2,
+                    "creationDate": "21/03/2024 08:27",
+                    "lastQuotaDate": "09/04/2024 21:11",
+                    "logs": [
+                        "Se creó la compra. 21/03/2024 08:27",
+                        "Se pago la ultima cuota. 09/04/2024 18:11"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "vCjzdD5JajUBvaU0ICh0",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 10000.0,
+                    "amountPerQuota": 10000.0,
+                    "nameOfProduct": "prestamo para pastillas",
+                    "type": 2,
+                    "creationDate": "30/03/2024 10:34",
+                    "lastQuotaDate": "09/04/2024 21:12",
+                    "logs": [
+                        "Se creó la compra. 30/03/2024 10:34",
+                        "Se pago la ultima cuota. 09/04/2024 18:12"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "wMJdfXTn8j3ALDCO9Odw",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 11000.0,
+                    "amountPerQuota": 11000.0,
+                    "nameOfProduct": "Remedios y chicles",
+                    "type": 2,
+                    "creationDate": "30/05/2024 17:47",
+                    "lastQuotaDate": "03/06/2024 18:06",
+                    "logs": [
+                        "Se creó la compra. 30/05/2024 17:47",
+                        "Se pago la ultima cuota. 03/06/2024 15:06"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "ini1ufnBw713zeWbH1Tf",
+            "name": "Da Vinci",
+            "logs": [
+                "Se creó Da Vinci. 02/04/2024 10:00",
+                "Se creó la compra Cuota marzo.01/03/2025 21:05",
+                "Se creó la compra Matricula 3er cuatrimestre.01/03/2025 21:06",
+                "Se creó la compra Cuota abril 2 de 6 3er cuatri.12/03/2025 08:16"
+            ],
+            "compras": [
+                {
+                    "id": "2DCFZ1i4ZsnmgSvpFiH7",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 139600.0,
+                    "amountPerQuota": 139600.0,
+                    "nameOfProduct": "Cuota abril",
+                    "type": 2,
+                    "creationDate": "02/04/2024 10:05",
+                    "lastQuotaDate": "11/04/2024 00:53",
+                    "logs": [
+                        "Se creó la compra. 02/04/2024 10:05",
+                        "Se pago la ultima cuota. 10/04/2024 21:53"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "2U9Sv6gXCRJMljKXdvXw",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 180000.0,
+                    "amountPerQuota": 180000.0,
+                    "nameOfProduct": "Cuota noviembre",
+                    "type": 2,
+                    "creationDate": "04/11/2024 19:45",
+                    "lastQuotaDate": "02/12/2024 22:29",
+                    "logs": [
+                        "Se creó la compra. 04/11/2024 19:45",
+                        "Se editó la compra. 28/11/2024 22:18",
+                        "Se pago la ultima cuota. 02/12/2024 19:29"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "6R6BYRcMK8v8QpomTLPX",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 179600.0,
+                    "amountPerQuota": 179600.0,
+                    "nameOfProduct": "Cuota febrero",
+                    "type": 2,
+                    "creationDate": "12/01/2025 19:42",
+                    "lastQuotaDate": "25/02/2025 18:50",
+                    "logs": [
+                        "Se creó la compra. 12/01/2025 19:42",
+                        "Se pago la ultima cuota. 25/02/2025 18:50"
+                    ],
+                    "firstQuotaDate": "25/02/2025 18:50",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "7R97vdBMRAFCuQFB7nrc",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 106800.0,
+                    "amountPerQuota": 106800.0,
+                    "nameOfProduct": "Matricula segundo semestre 2024",
+                    "type": 2,
+                    "creationDate": "29/07/2024 18:05",
+                    "lastQuotaDate": "04/08/2024 03:51",
+                    "logs": [
+                        "Se creó la compra. 29/07/2024 18:05",
+                        "Se editó la compra. 04/08/2024 00:46",
+                        "Se pago la ultima cuota. 04/08/2024 00:51"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "8IqKkRPQGQDc9MRkS06q",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 149400.0,
+                    "amountPerQuota": 149400.0,
+                    "nameOfProduct": "Matricula 3er cuatrimestre",
+                    "type": 2,
+                    "creationDate": "01/03/2025 21:06",
+                    "lastQuotaDate": "12/03/2025 08:15",
+                    "logs": [
+                        "Se creó la compra. 01/03/2025 21:06",
+                        "Se pago la ultima cuota. 12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": "12/03/2025 08:15",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "ARNnYfeqO4NpHZYXjutq",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 0,
+                    "totalAmount": 188400.0,
+                    "amountPerQuota": 188400.0,
+                    "nameOfProduct": "Cuota abril 2 de 6 3er cuatri",
+                    "type": 0,
+                    "creationDate": "12/03/2025 08:16",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 12/03/2025 08:16"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "AlLO3lqTBn3iDiLOBx1J",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 147600.0,
+                    "amountPerQuota": 147600.0,
+                    "nameOfProduct": "Cuota junio",
+                    "type": 2,
+                    "creationDate": "05/05/2024 11:01",
+                    "lastQuotaDate": "03/06/2024 22:39",
+                    "logs": [
+                        "Se creó la compra. 05/05/2024 11:01",
+                        "Se editó la compra. 03/06/2024 19:35",
+                        "Se pago la ultima cuota. 03/06/2024 19:39"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "G2ExUcQjaIVA3vkoITKa",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 139600.0,
+                    "amountPerQuota": 139600.0,
+                    "nameOfProduct": "Cuota mayo",
+                    "type": 2,
+                    "creationDate": "04/05/2024 15:37",
+                    "lastQuotaDate": "05/05/2024 14:00",
+                    "logs": [
+                        "Se creó la compra. 04/05/2024 15:37",
+                        "Se pago la ultima cuota. 05/05/2024 11:00"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "LGY7kWH3XPrzdvv1sEri",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 167600.0,
+                    "amountPerQuota": 167600.0,
+                    "nameOfProduct": "cuota mes octubre",
+                    "type": 2,
+                    "creationDate": "01/10/2024 18:38",
+                    "lastQuotaDate": "04/11/2024 20:51",
+                    "logs": [
+                        "Se creó la compra. 01/10/2024 18:38",
+                        "Se pago la ultima cuota. 04/11/2024 17:51"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "OiOCGiDlgnBIjkgtIpnE",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 173000.0,
+                    "amountPerQuota": 173000.0,
+                    "nameOfProduct": "Cuota agosto",
+                    "type": 2,
+                    "creationDate": "29/07/2024 18:04",
+                    "lastQuotaDate": "04/08/2024 03:51",
+                    "logs": [
+                        "Se creó la compra. 29/07/2024 18:04",
+                        "Se editó la compra. 04/08/2024 00:45",
+                        "Se pago la ultima cuota. 04/08/2024 00:51"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "SfMr7roj9HY1wsNDeppL",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 179600.0,
+                    "amountPerQuota": 179600.0,
+                    "nameOfProduct": "Cuota enero",
+                    "type": 2,
+                    "creationDate": "02/12/2024 19:30",
+                    "lastQuotaDate": "12/01/2025 22:41",
+                    "logs": [
+                        "Se creó la compra. 02/12/2024 19:30",
+                        "Se pago la ultima cuota. 12/01/2025 19:41"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "Yv7pfWxfVGRkgNutuVxI",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 188400.0,
+                    "amountPerQuota": 188400.0,
+                    "nameOfProduct": "Cuota marzo 1 de 6 3er cuatri",
+                    "type": 2,
+                    "creationDate": "01/03/2025 21:05",
+                    "lastQuotaDate": "12/03/2025 08:15",
+                    "logs": [
+                        "Se creó la compra. 01/03/2025 21:05",
+                        "Se editó la compra. 02/03/2025 00:45",
+                        "Se pago la ultima cuota. 12/03/2025 08:15"
+                    ],
+                    "firstQuotaDate": "12/03/2025 08:15",
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "lQAA3Q0CqsSbcP6I6SQu",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 167600.0,
+                    "amountPerQuota": 167600.0,
+                    "nameOfProduct": "cuota septiembre",
+                    "type": 2,
+                    "creationDate": "04/08/2024 01:04",
+                    "lastQuotaDate": "01/10/2024 21:37",
+                    "logs": [
+                        "Se creó la compra. 04/08/2024 01:04",
+                        "Se editó la compra. 01/10/2024 18:30",
+                        "Se pago la ultima cuota. 01/10/2024 18:37"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "pZihr7Uome41aed12LiI",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 28000.0,
+                    "amountPerQuota": 28000.0,
+                    "nameOfProduct": "5 derechos a examne",
+                    "type": 2,
+                    "creationDate": "02/12/2024 19:30",
+                    "lastQuotaDate": "23/12/2024 15:50",
+                    "logs": [
+                        "Se creó la compra. 02/12/2024 19:30",
+                        "Se pago la ultima cuota. 23/12/2024 12:50"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "yAp8pSA4MBIVnyq8NN0g",
+                    "currencyType": 0,
+                    "amountOfQuotas": 0,
+                    "quotasPayed": 0,
+                    "totalAmount": 154800.0,
+                    "amountPerQuota": 154800.0,
+                    "nameOfProduct": "Cuota mes Julio",
+                    "type": 2,
+                    "creationDate": "03/06/2024 19:39",
+                    "lastQuotaDate": "29/07/2024 20:52",
+                    "logs": [
+                        "Se creó la compra. 03/06/2024 19:39",
+                        "Se editó la compra. 27/06/2024 14:33",
+                        "Se pago la ultima cuota. 29/07/2024 17:52"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "vj64bcjhRBioRHu9DlVP",
+            "name": "Ahorro",
+            "logs": [
+                "Se creó Ahorro. 28/10/2024 20:32",
+                "Se elimino la compra LhAB20kUXc4pzElyiQkF. 25/01/2025 05:47",
+                "Se creó la compra Ahorro marzo.01/03/2025 22:02",
+                "Se elimino la compra s5npcVesmS9sSvcTgDvm. 01/03/2025 22:12",
+                "Se creó la compra ahorro marzo.01/03/2025 22:13",
+                "Se elimino la compra F9S8tuHeweYEDZ0k27LG. 12/03/2025 08:15",
+                "Se elimino la compra nDn60ZYmWM7cX9Ujnnib. 15/03/2025 16:16"
+            ],
+            "compras": []
+        }
+    ]
+}

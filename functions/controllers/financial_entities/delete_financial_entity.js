@@ -3,7 +3,7 @@ import { logRed, logYellow } from "../../funciones/logsCustom.js";
 
 export async function deleteFinancialEntity(financialEntityId) {
   try {
-    const checkQuery = "SELECT id FROM financial_entities WHERE id = $1";
+    const checkQuery = "SELECT id FROM financial_entities WHERE id = $1 AND deleted = false";
     const checkResult = await executeQuery(checkQuery, [financialEntityId]);
 
     if (checkResult.length === 0) {
@@ -11,7 +11,7 @@ export async function deleteFinancialEntity(financialEntityId) {
         `No se encontró la entidad financiera con ID ${financialEntityId}`
       );
       throw new Error(
-        "No se encontró la entidad financiera con el ID proporcionado."
+        "No se encontró la entidad financiera con el ID proporcionado o ya fue eliminada."
       );
     }
 
@@ -22,8 +22,6 @@ export async function deleteFinancialEntity(financialEntityId) {
       logRed("No se pudo eliminar la entidad financiera.");
       throw new Error("No se pudo eliminar la entidad financiera.");
     }
-
-    return result;
   } catch (error) {
     logRed(`Error en deleteFinancialEntity: ${error.stack}`);
     throw error;

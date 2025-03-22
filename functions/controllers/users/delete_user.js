@@ -18,8 +18,6 @@ export async function deleteUser(userId) {
       logRed("No se pudo eliminar el usuario.");
       throw new Error("No se pudo eliminar el usuario.");
     }
-
-    return result;
   } catch (error) {
     logRed(`Error en deleteUser: ${error.stack}`);
     throw error;

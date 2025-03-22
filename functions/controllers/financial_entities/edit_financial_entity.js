@@ -26,8 +26,6 @@ export async function editFinancialEntity(newName, financialEntityId) {
       logRed("No se pudo actualizar la entidad financiera.");
       throw new Error("No se pudo actualizar la entidad financiera.");
     }
-
-    return result;
   } catch (error) {
     logRed(`Error en editFinancialEntity: ${error.stack}`);
     throw error;

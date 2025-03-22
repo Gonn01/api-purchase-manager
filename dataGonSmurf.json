@@ -1,0 +1,160 @@
+{
+    "idUser": "1HaLdqpLrNg2wIEwurXBZIGDvoP2",
+    "categorias": [
+        {
+            "id": "P1IrX4UwNNISFqku5AwA",
+            "name": "goti",
+            "logs": [
+                "Se creó goti. 22/01/2025 18:44",
+                "Se creó la compra combo.22/01/2025 18:44",
+                "Se creó la compra asd.22/01/2025 18:46",
+                "Se elimino la compra M6kXC6x6IjNcz51frFnC. 23/01/2025 22:24",
+                "Se elimino la compra Z33n9PUrmvMtT0tLPfXu. 23/01/2025 22:25",
+                "Se creó la compra asd.23/01/2025 22:28",
+                "Se creó la compra asdas.23/01/2025 22:58",
+                "Se creó la compra asado.23/01/2025 20:32",
+                "Se creó la compra jsjs.23/01/2025 20:32",
+                "Se creó la compra asd.24/01/2025 00:06",
+                "Se elimino la compra 218WDJA4Azs8sdgsRljs. 24/01/2025 23:01",
+                "Se elimino la compra xZWpdz6vhI6qy9dK3Sb9. 26/01/2025 18:54",
+                "Se creó la compra nada.26/01/2025 22:07",
+                "Se creó la compra asdas.26/01/2025 22:07",
+                "Se creó la compra 123.26/01/2025 22:07",
+                "Se elimino la compra jlHkGP7q55x4iA65gqoO. 31/01/2025 13:32"
+            ],
+            "compras": [
+                {
+                    "id": "1HxO9vvpGSvv0VUyBJqM",
+                    "currencyType": 1,
+                    "amountOfQuotas": 12,
+                    "quotasPayed": 2,
+                    "totalAmount": 12.0,
+                    "amountPerQuota": 1.0,
+                    "nameOfProduct": "asd",
+                    "type": 0,
+                    "creationDate": "24/01/2025 00:06",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 24/01/2025 00:06",
+                        "Se pago una cuota.26/01/2025 18:54",
+                        "Se pago una cuota.26/01/2025 18:54",
+                        "Se editó la compra. 26/01/2025 19:38"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": true,
+                    "image": null
+                },
+                {
+                    "id": "1b3g5SwhDyH6x0d4JwzI",
+                    "currencyType": 0,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 0,
+                    "totalAmount": 3.0,
+                    "amountPerQuota": 3.0,
+                    "nameOfProduct": "nada",
+                    "type": 1,
+                    "creationDate": "26/01/2025 22:07",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 26/01/2025 22:07"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "3IWKKYWAujobYD8o7R6d",
+                    "currencyType": 2,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 1,
+                    "totalAmount": 3.0,
+                    "amountPerQuota": 3.0,
+                    "nameOfProduct": "asd1",
+                    "type": 0,
+                    "creationDate": "23/01/2025 22:28",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 23/01/2025 22:28",
+                        "Se editó la compra. 23/01/2025 22:32",
+                        "Se pago una cuota.23/01/2025 20:35",
+                        "Se pago una cuota.25/01/2025 02:15",
+                        "Se pago una cuota.25/01/2025 02:15",
+                        "Se pago una cuota.25/01/2025 02:15",
+                        "Se pago una cuota.25/01/2025 02:15",
+                        "Se pago una cuota.25/01/2025 02:15",
+                        "Se pago una cuota.25/01/2025 02:15",
+                        "Se pago una cuota.26/01/2025 18:54",
+                        "Se pago una cuota.26/01/2025 18:54",
+                        "Se editó la compra. 26/01/2025 19:35",
+                        "Se editó la compra. 26/01/2025 22:07",
+                        "Se editó la compra. 27/01/2025 13:36",
+                        "Se editó la compra. 27/01/2025 13:37"
+                    ],
+                    "firstQuotaDate": "27/01/2025 13:39",
+                    "ignored": true,
+                    "image": "http://res.cloudinary.com/dkdwnhsxf/image/upload/v1737671286/public/purchase-manager/asd.jpg"
+                },
+                {
+                    "id": "Upn7wpnXl1DDaaeFzij8",
+                    "currencyType": 2,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 0,
+                    "totalAmount": 7.0,
+                    "amountPerQuota": 7.0,
+                    "nameOfProduct": "123",
+                    "type": 1,
+                    "creationDate": "26/01/2025 22:07",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 26/01/2025 22:07"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                },
+                {
+                    "id": "r2LNYK4rWAZI3V7RMKRf",
+                    "currencyType": 1,
+                    "amountOfQuotas": 1,
+                    "quotasPayed": 0,
+                    "totalAmount": 5.0,
+                    "amountPerQuota": 5.0,
+                    "nameOfProduct": "asdas",
+                    "type": 1,
+                    "creationDate": "26/01/2025 22:07",
+                    "lastQuotaDate": null,
+                    "logs": [
+                        "Se creó la compra. 26/01/2025 22:07"
+                    ],
+                    "firstQuotaDate": null,
+                    "ignored": false,
+                    "image": null
+                }
+            ]
+        },
+        {
+            "id": "Z9RAAKUIAS8Ypfp2DAKk",
+            "name": "asdasd",
+            "logs": [
+                "Se creó asdasd. 22/01/2025 15:08",
+                "Se creó la compra asd.22/01/2025 15:09",
+                "Se creó la compra comida.22/01/2025 20:47",
+                "Se elimino la compra 6afb4ccFEkM1Wg0rw4nq. 23/01/2025 22:25",
+                "Se elimino la compra LLhkLlWxyBQn6ljXdSyy. 23/01/2025 22:25"
+            ],
+            "compras": []
+        },
+        {
+            "id": "cjkT47M1Nb6jZOEPYhLO",
+            "name": "agus",
+            "logs": [
+                "Se creó agus. 24/01/2025 12:29",
+                "Se creó la compra compi.24/01/2025 12:29",
+                "Se creó la compra milanesa.24/01/2025 12:31",
+                "Se elimino la compra 2fZDxK1I7PFfujQEAPyJ. 26/01/2025 18:54",
+                "Se elimino la compra EuzmeCEGuvu443VHCKdU. 26/01/2025 18:54"
+            ],
+            "compras": []
+        }
+    ]
+}
