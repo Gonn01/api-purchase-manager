@@ -32,7 +32,7 @@ export async function getHomeData(userId) {
       LEFT JOIN 
         purchases p ON fe.id = p.financial_entity_id
       WHERE 
-        u.id = $1 AND fe.deleted = false AND p.deleted = false
+    u.id = $1 AND fe.deleted = false
       ORDER BY 
         p.created_at DESC, fe.created_at DESC;
     `;

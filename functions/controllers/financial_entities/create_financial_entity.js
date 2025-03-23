@@ -1,5 +1,6 @@
 import { executeQuery } from "../../db.js";
 import { logRed, logYellow } from "../../funciones/logsCustom.js";
+import { FinancialEntity } from "../../models/financial_entity.js";
 
 export async function createFinancialEntity(name, userId) {
   try {
@@ -15,9 +16,9 @@ export async function createFinancialEntity(name, userId) {
 
     const query =
       "INSERT INTO financial_entities (name, user_id) VALUES ($1, $2) RETURNING *";
-    const result = await executeQuery(query, [name, userId]);
+    const result = await executeQuery(query, [name, userId], true);
 
-    return result[0];
+    return FinancialEntity.fromJson(result[0]);
   } catch (error) {
     logRed(`Error en createFinancialEntity: ${error.stack}`);
     throw error;

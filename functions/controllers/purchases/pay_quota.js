@@ -1,9 +1,8 @@
 import { executeQuery } from "../../db.js";
 import { logRed } from "../../funciones/logsCustom.js";
-import { Purchase } from "./purchase.js"; // Asegúrate de que la ruta sea correcta
-import { PurchaseType } from "./purchase_type.js"; // Asegúrate de que la ruta sea correcta
+import { Purchase, PurchaseType } from "../../models/purchase.js"; // Asegúrate de que la ruta sea correcta
 
-export async function payQuota(purchaseId, purchaseTypeValue) {
+export async function payQuota(purchaseId) {
   try {
     // Fetch the purchase details
     const purchaseQuery = `
@@ -18,33 +17,30 @@ export async function payQuota(purchaseId, purchaseTypeValue) {
     // Create a Purchase instance from the database result
     const purchaseData = purchaseResult[0];
 
-    // Convert type to number before calling Purchase.fromJson()
-    purchaseData.type = parseInt(purchaseData.type);
-
     const purchase = Purchase.fromJson(purchaseData);
-
-    if (purchase.payedQuotas >= purchase.numberOfQuotas) {
+    const purchaseTypeValue = purchase.type;
+    if (purchase.payed_quotas >= purchase.number_of_quotas) {
       throw new Error("All quotas have already been paid.");
     }
 
     // Increment payed_quotas using copyWith
     const updatedPurchase = purchase.copyWith({
-      payedQuotas: purchase.payedQuotas + 1,
+      payed_quotas: purchase.payed_quotas + 1,
     });
 
     // Get the current timestamp
     const now = new Date();
 
     // Update first_quota_date if it's the first quota
-    const firstQuotaDate = updatedPurchase.payedQuotas === 1 ? now : updatedPurchase.firstQuotaDate;
+    const first_quota_date = updatedPurchase.payed_quotas === 1 ? now : updatedPurchase.first_quota_date;
 
     // Update finalization_date and type if it's the last quota
-    const finalizationDate = updatedPurchase.payedQuotas === updatedPurchase.numberOfQuotas ? now : updatedPurchase.finalizationDate;
+    const finalization_date = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas ? now : updatedPurchase.finalization_date;
 
     // Convert purchaseTypeValue to the enum
     const purchaseType = PurchaseType.type(purchaseTypeValue);
 
-    const type = updatedPurchase.payedQuotas === updatedPurchase.numberOfQuotas
+    const type = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas
       ? purchaseType === PurchaseType.currentDebtorPurchase
         ? PurchaseType.settledDebtorPurchase
         : PurchaseType.settledCreditorPurchase
@@ -57,12 +53,18 @@ export async function payQuota(purchaseId, purchaseTypeValue) {
       WHERE id = $5;
     `;
     await executeQuery(updateQuery, [
-      updatedPurchase.payedQuotas,
-      firstQuotaDate,
-      finalizationDate,
+      updatedPurchase.payed_quotas,
+      first_quota_date,
+      finalization_date,
       PurchaseType.getValue(type), // Convert enum back to integer
       purchaseId,
     ]);
+    // Fetch the purchase details
+    const purchaseQuery2 = `
+      SELECT * FROM purchases WHERE id = $1;
+    `;
+    const purchaseResult2 = await executeQuery(purchaseQuery2, [purchaseId], true);
+    return Purchase.fromJson(purchaseResult2[0]);
   } catch (error) {
     logRed(`Error in payQuota: ${error.stack}`);
     throw error;

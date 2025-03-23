@@ -294,16 +294,16 @@ router.post("/users/login", async (req, res) => {
 router.post("/purchases/", async (req, res) => {
   const startTime = performance.now();
 
-  const errorMessage = verifyParamaters(req.body, ["ignored", "amount", "amountOerQuota", "numberOfQuotas", "currencyType", "name", "type", "financialEntityId", "fixedExpense"]);
+  const errorMessage = verifyParamaters(req.body, ["ignored", "amount", "amountOerQuota", "number_of_quotas", "currency_type", "name", "type", "financialEntityId", "fixedExpense"]);
 
   if (errorMessage) {
     return res.status(400).json({ message: errorMessage });
   }
 
-  const { ignored, amount, amountOerQuota, numberOfQuotas, currencyType, name, type, financialEntityId, fixedExpense } = req.body;
+  const { ignored, amount, amountOerQuota, number_of_quotas, currency_type, name, type, financialEntityId, fixedExpense } = req.body;
 
   try {
-    const result = await createPurchase(ignored, image, amount, amountOerQuota, numberOfQuotas, currencyType, name, type, financialEntityId, fixedExpense);
+    const result = await createPurchase(ignored, image, amount, amountOerQuota, number_of_quotas, currency_type, name, type, financialEntityId, fixedExpense);
 
     res.status(200).json({
       body: result,
