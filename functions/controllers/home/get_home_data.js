@@ -32,7 +32,7 @@ export async function getHomeData(userId) {
       LEFT JOIN 
         purchases p ON fe.id = p.financial_entity_id
       WHERE 
-        u.id = $1 AND fe.deleted = false AND p.ignored = false AND p.deleted = false
+        u.id = $1 AND fe.deleted = false AND p.deleted = false
       ORDER BY 
         p.created_at DESC, fe.created_at DESC;
     `;
@@ -49,30 +49,29 @@ export async function getHomeData(userId) {
 
       if (!groupedData[financialEntityId]) {
         groupedData[financialEntityId] = {
-          financialEntityId: financialEntityId,
-          id: row.id,
+          financialEntityId: parseInt(financialEntityId),
+          id: parseInt(row.id),
           created_at: row.created_at,
           name: row.name,
-          compras: [],
+          purchases: [],
         };
       }
 
       if (row.purchase_id) {
-        groupedData[financialEntityId].compras.push({
-          compraId: row.purchase_id,
+        groupedData[financialEntityId].purchases.push({
+          id: parseInt(row.purchase_id),
           created_at: row.p_created_at, // Usa p_created_at para la compra
           finalization_date: row.finalization_date,
           first_quota_date: row.first_quota_date,
           ignored: row.ignored,
           image: row.image,
-          amount: row.amount,
-          amount_per_quota: row.amount_per_quota,
-          number_of_quotas: row.number_of_quotas,
-          payed_quotas: row.payed_quotas,
-          currency_type: row.currency_type,
-          name: row.p_name, // Usa p_name para la compra
-          type: row.type,
-          financial_entity_id: row.financial_entity_id,
+          amount: parseFloat(row.amount),
+          amount_per_quota: parseFloat(row.amount_per_quota),
+          number_of_quotas: parseInt(row.number_of_quotas),
+          payed_quotas: parseInt(row.payed_quotas),
+          currency_type: parseInt(row.currency_type),
+          name: row.p_name,
+          type: parseInt(row.type),
           fixed_expense: row.fixed_expense,
         });
       }
@@ -81,7 +80,7 @@ export async function getHomeData(userId) {
     // Convertir el objeto agrupado en un array
     const finalResult = Object.values(groupedData);
 
-    return  finalResult;
+    return finalResult;
   } catch (error) {
     logRed(`Error en getHomeData: ${error.stack}`);
     throw error;

@@ -1,44 +1,54 @@
 import { executeQuery } from "../../db.js";
 import { logRed } from "../../funciones/logsCustom.js";
+import { Purchase } from "./purchase.js"; // Asegúrate de que la ruta sea correcta
+import { PurchaseType } from "./purchase_type.js"; // Asegúrate de que la ruta sea correcta
 
-export async function payQuota(purchaseId, purchaseType) {
+export async function payQuota(purchaseId, purchaseTypeValue) {
   try {
     // Fetch the purchase details
     const purchaseQuery = `
       SELECT * FROM purchases WHERE id = $1;
     `;
-    const purchaseResult = await executeQuery(purchaseQuery, [purchaseId]);
+    const purchaseResult = await executeQuery(purchaseQuery, [purchaseId], true);
 
     if (purchaseResult.length === 0) {
       throw new Error("Purchase not found.");
     }
 
-    const purchase = purchaseResult[0];
+    // Create a Purchase instance from the database result
+    const purchaseData = purchaseResult[0];
 
-    // Verifica que no se paguen cuotas de más
-    if (purchase.payed_quotas >= purchase.number_of_quotas) {
+    // Convert type to number before calling Purchase.fromJson()
+    purchaseData.type = parseInt(purchaseData.type);
+
+    const purchase = Purchase.fromJson(purchaseData);
+
+    if (purchase.payedQuotas >= purchase.numberOfQuotas) {
       throw new Error("All quotas have already been paid.");
     }
 
-    // Increment payed_quotas
-    purchase.payed_quotas += 1;
+    // Increment payed_quotas using copyWith
+    const updatedPurchase = purchase.copyWith({
+      payedQuotas: purchase.payedQuotas + 1,
+    });
 
     // Get the current timestamp
     const now = new Date();
 
     // Update first_quota_date if it's the first quota
-    if (purchase.payed_quotas === 1) {
-      purchase.first_quota_date = now;
-    }
+    const firstQuotaDate = updatedPurchase.payedQuotas === 1 ? now : updatedPurchase.firstQuotaDate;
 
     // Update finalization_date and type if it's the last quota
-    if (purchase.payed_quotas === purchase.number_of_quotas) {
-      purchase.finalization_date = now;
-      purchase.type =
-        purchaseType === "currentDebtorPurchase"
-          ? "settledDebtorPurchase"
-          : "settledCreditorPurchase";
-    }
+    const finalizationDate = updatedPurchase.payedQuotas === updatedPurchase.numberOfQuotas ? now : updatedPurchase.finalizationDate;
+
+    // Convert purchaseTypeValue to the enum
+    const purchaseType = PurchaseType.type(purchaseTypeValue);
+
+    const type = updatedPurchase.payedQuotas === updatedPurchase.numberOfQuotas
+      ? purchaseType === PurchaseType.currentDebtorPurchase
+        ? PurchaseType.settledDebtorPurchase
+        : PurchaseType.settledCreditorPurchase
+      : updatedPurchase.type;
 
     // Update the purchase record in the database
     const updateQuery = `
@@ -47,16 +57,12 @@ export async function payQuota(purchaseId, purchaseType) {
       WHERE id = $5;
     `;
     await executeQuery(updateQuery, [
-      purchase.payed_quotas,
-      purchase.first_quota_date,
-      purchase.finalization_date,
-      purchase.type,
+      updatedPurchase.payedQuotas,
+      firstQuotaDate,
+      finalizationDate,
+      PurchaseType.getValue(type), // Convert enum back to integer
       purchaseId,
     ]);
-
-    return {
-      message: "Quota paid successfully.",
-    };
   } catch (error) {
     logRed(`Error in payQuota: ${error.stack}`);
     throw error;

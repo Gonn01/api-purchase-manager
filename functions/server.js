@@ -19,7 +19,7 @@ import { editPurchase } from "./controllers/purchases/edit_purchase.js";
 import { deletePurchase } from "./controllers/purchases/delete_purchase.js";
 import { getHomeData } from "./controllers/home/get_home_data.js";
 import { payQuota } from "./controllers/purchases/pay_quota.js";
-import { ignorePurchase } from "./controllers/purchases/ignore_purchase.js";
+import { alternateIgnorePurchase } from "./controllers/purchases/alternate_ignore_purchase.js";
 import { login } from "./controllers/users/login.js";
 
 
@@ -272,17 +272,9 @@ router.post("/users/login", async (req, res) => {
   const { firebaseUserId, email, name } = req.body;
 
   try {
-    const alreadyRegistered = await login(firebaseUserId, email, name);
+    const response = await login(firebaseUserId, email, name);
 
-    if (alreadyRegistered) {
-      return res.status(200).json({
-        message: "Usuario ya registrado",
-      });
-    } else {
-      res.status(200).json({
-        message: "Usuario logeado correctamente",
-      });
-    }
+    return res.status(200).json(response);
 
   } catch (error) {
     logRed(`Error en login: ${error.stack}`);
@@ -474,7 +466,7 @@ router.put("/purchases/:purchaseId/ignore", async (req, res) => {
   const { purchaseId } = req.params;
 
   try {
-    const result = await ignorePurchase(purchaseId);
+    const result = await alternateIgnorePurchase(purchaseId);
 
     res.status(200).json({
       body: result,
