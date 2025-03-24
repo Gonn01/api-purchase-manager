@@ -21,6 +21,8 @@ import { getHomeData } from "./controllers/home/get_home_data.js";
 import { payQuota } from "./controllers/purchases/pay_quota.js";
 import { alternateIgnorePurchase } from "./controllers/purchases/alternate_ignore_purchase.js";
 import { login } from "./controllers/users/login.js";
+import { unpayQuota } from "./controllers/purchases/unpay_quota.js";
+import { payMonth } from "./controllers/purchases/pay_month.js";
 
 
 var app = express();
@@ -454,6 +456,67 @@ router.put("/purchases/:purchaseId/pay-quota", async (req, res) => {
     logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
   }
 });
+
+router.put("/purchases/:purchaseId/unpay-quota", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage = verifyParamaters(req.params, ["purchaseId"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { purchaseId } = req.params;
+
+  try {
+    const result = await unpayQuota(purchaseId);
+
+    res.status(200).json({
+      body: result,
+      message: "Entidad financiera actualizada correctamente",
+    });
+  } catch (error) {
+    logRed(`Error en PUT financial-entities: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+
+router.put("/financial-entities/:financialEntityId/pay-month", async (req, res) => {
+  const startTime = performance.now();
+
+  const errorMessage2 = verifyParamaters(req.params, ["financialEntityId"]);
+
+  if (errorMessage2) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const errorMessage = verifyParamaters(req.body, ["purchaseIds"]);
+
+  if (errorMessage) {
+    return res.status(400).json({ message: errorMessage });
+  }
+
+  const { purchaseIds } = req.body;
+  logYellow(purchaseIds)
+  try {
+    const result = await payMonth(purchaseIds);
+
+    res.status(200).json({
+      body: result,
+      message: "Entidad financiera actualizada correctamente",
+    });
+  } catch (error) {
+    logRed(`Error en PUT financial-entities: ${error.stack}`);
+    res.status(500).json({ message: error.stack });
+  } finally {
+    const endTime = performance.now();
+    logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
+  }
+});
+
 router.put("/purchases/:purchaseId/ignore", async (req, res) => {
   const startTime = performance.now();
 
