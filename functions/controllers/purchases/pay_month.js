@@ -32,8 +32,13 @@ export async function payMonth(purchaseIds) {
         payed_quotas: purchase.payed_quotas + 1,
       });
 
-      const first_quota_date = updatedPurchase.payed_quotas === 1 ? now : updatedPurchase.first_quota_date;
-      const finalization_date = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas ? now : updatedPurchase.finalization_date;
+      // If the purchase has just started paying or if the first quota date is null, use now.
+      const first_quota_date = (updatedPurchase.payed_quotas === 1 || !updatedPurchase.first_quota_date)
+        ? now
+        : updatedPurchase.first_quota_date;
+      const finalization_date = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas
+        ? now
+        : updatedPurchase.finalization_date;
 
       const purchaseType = PurchaseType.type(purchase.type);
       const type = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas
@@ -45,8 +50,8 @@ export async function payMonth(purchaseIds) {
       updates.push({
         id: purchase.id,
         payed_quotas: updatedPurchase.payed_quotas,
-        first_quota_date: first_quota_date.toISOString(), // Asegúrate de que las fechas sean ISOString
-        finalization_date: finalization_date ? finalization_date.toISOString() : null, // Ahora lo dejamos como null si no hay fecha
+        first_quota_date: first_quota_date.toISOString(),
+        finalization_date: finalization_date ? finalization_date.toISOString() : null,
         type: PurchaseType.getValue(type),
       });
 
@@ -63,8 +68,8 @@ export async function payMonth(purchaseIds) {
         UPDATE purchases AS p
         SET 
           payed_quotas = u.payed_quotas,
-          first_quota_date = u.first_quota_date::timestamp,  -- Asegúrate de convertir a timestamp
-          finalization_date = u.finalization_date::timestamp,  -- Asegúrate de convertir a timestamp
+          first_quota_date = u.first_quota_date::timestamp,
+          finalization_date = u.finalization_date::timestamp,
           type = u.type
         FROM (VALUES ${updateQueries}) AS u(id, payed_quotas, first_quota_date, finalization_date, type)
         WHERE p.id = u.id;

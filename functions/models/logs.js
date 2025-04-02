@@ -14,10 +14,10 @@ export class PurchaseLog extends Log {
 
     static fromJson(json) {
         return new PurchaseLog({
-            id: json.id,
+            id: json.id * 1,
             content: json.content,
-            created_at: new Date(json.createdAt),
-            purchase_id: json.purchaseId,
+            created_at: new Date(json.created_at),
+            purchase_id: json.purchase_id * 1,
         });
     }
 }

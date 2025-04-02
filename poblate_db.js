@@ -7,7 +7,7 @@ dotenv.config({ path: process.env.ENV_FILE || ".env" });
 async function importData() {
   try {
     console.log("📥 Loading JSON data...");
-    const jsonData = JSON.parse(fs.readFileSync("dataGonSmurf.json", "utf8"));
+    const jsonData = JSON.parse(fs.readFileSync("dataGon.json", "utf8"));
 
     // Insert user and get generated ID
     const userResult = await executeQuery(

@@ -48,6 +48,9 @@ export async function getHomeData(userId) {
     const groupedData = {};
 
     result.forEach((row) => {
+      // Si no existe una entidad financiera, se omite el registro
+      if (row.financial_entity_id === null) return;
+
       const financialEntityId = row.financial_entity_id;
 
       if (!groupedData[financialEntityId]) {

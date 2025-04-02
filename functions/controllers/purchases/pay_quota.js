@@ -19,8 +19,10 @@ export async function payQuota(purchaseId) {
 
     const purchase = Purchase.fromJson(purchaseData);
     const purchaseTypeValue = purchase.type;
-    if (purchase.payed_quotas >= purchase.number_of_quotas) {
-      throw new Error("All quotas have already been paid.");
+    if (!purchase.fixed_expense) {
+      if (purchase.payed_quotas >= purchase.number_of_quotas) {
+        throw new Error("All quotas have already been paid.");
+      }
     }
 
     // Increment payed_quotas using copyWith
