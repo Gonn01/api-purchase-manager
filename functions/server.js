@@ -42,6 +42,7 @@ import { createPurchaseLog } from "../functions/funciones/logs.js";
 // ==============================================
 import { getHomeData } from "./controllers/home/get_home_data.js";
 import { getPurchasesById } from "./controllers/purchases/get_purchases_by_id.js";
+import { getPurchaseLogsByEntity } from "./controllers/financial_entities/get_logs_by_financial_entity.js";
 
 const app = express();
 app.use(cors());

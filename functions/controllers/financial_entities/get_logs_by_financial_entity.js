@@ -1,25 +1,37 @@
 import { executeQuery } from "../../db.js";
 import { logRed } from "../../funciones/logsCustom.js";
-export async function getPurchaseLogsByEntity(entityId, limit = 10) {
-    try {
-        const query = `
-        SELECT 
-          l.id AS log_id,
-          l.purchase_id,
-          l.message,
-          l.created_at,
-          p.name AS nombre_compra
-        FROM purchase_logs l
-        JOIN purchases p ON l.purchase_id = p.id
-        WHERE p.entity_id = $1
-        ORDER BY l.created_at DESC
-        LIMIT $2;
-      `;
 
-        const logs = await executeQuery(query, [entityId, limit], true);
-        return logs;
-    } catch (error) {
-        logRed(`Error en getPurchaseLogsByEntity: ${error.stack}`);
-        throw error;
-    }
+/**
+ * Devuelve los logs de las compras de una entidad financiera en los últimos 30 días.
+ * @param {number} entityId - ID de la entidad financiera
+ * @returns {Promise<Array>} - Lista plana de logs con nombre de la compra
+ */
+export async function getPurchaseLogsByEntity(entityId) {
+  try {
+    const query = `
+      SELECT 
+        l.id,
+        l.created_at,
+        l.content,
+        p.name
+      FROM purchases_logs l
+      JOIN purchases p ON p.id = l.purchase_id
+      WHERE 
+        p.financial_entity_id = $1 AND
+        l.created_at >= NOW() - INTERVAL '30 days'
+      ORDER BY l.created_at DESC;
+    `;
+
+    const result = await executeQuery(query, [entityId], true);
+    const flatLogs = result.map(log => ({
+      id: log.id * 1,
+      created_at: log.created_at,
+      content: log.content,
+      name: log.name
+    }));
+    return flatLogs;
+  } catch (error) {
+    logRed(`Error en getPurchaseLogsByEntity: ${error.stack}`);
+    throw error;
+  }
 }
