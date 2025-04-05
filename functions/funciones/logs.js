@@ -14,6 +14,29 @@ export async function createPurchaseLog(purchaseId, content) {
         throw error;
     }
 }
+export async function createMultiplePurchaseLogs(purchaseIds, content) {
+    try {
+        if (!purchaseIds.length) return;
+
+        const now = new Date();
+        const values = [];
+        const placeholders = purchaseIds.map((_, index) => {
+            const offset = index * 3;
+            values.push(purchaseIds[index], content, now);
+            return `($${offset + 1}, $${offset + 2}, $${offset + 3})`;
+        }).join(", ");
+
+        const query = `
+        INSERT INTO purchases_logs (purchase_id, content, created_at)
+        VALUES ${placeholders}
+      `;
+
+        await executeQuery(query, values);
+    } catch (error) {
+        logRed(`Error al crear múltiples logs de compra: ${error.stack}`);
+        throw error;
+    }
+}
 
 export async function createFinancialEntityLog(financialEntityId, content) {
     try {

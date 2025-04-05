@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db.js";
-import { logRed } from "../../funciones/logsCustom.js";
+import { logRed, logYellow } from "../../funciones/logsCustom.js";
 import { Purchase, PurchaseType } from "../../models/purchase.js";
 
 export async function payMonth(purchaseIds) {
@@ -8,18 +8,15 @@ export async function payMonth(purchaseIds) {
       throw new Error("Invalid purchaseIds: must be a non-empty array.");
     }
 
-    // Obtener todas las compras en una sola consulta
-    const purchaseQuery = `SELECT * FROM purchases WHERE id = ANY($1);`;
-    const purchaseResults = await executeQuery(purchaseQuery, [purchaseIds], true);
+    const now = new Date();
+    const selectQuery = `SELECT * FROM purchases WHERE id = ANY($1);`;
+    const purchaseResults = await executeQuery(selectQuery, [purchaseIds], true);
 
     if (purchaseResults.length === 0) {
       throw new Error("No purchases found for the provided IDs.");
     }
 
-    const now = new Date();
-    const updatedPurchases = [];
     const updates = [];
-
     for (const purchaseData of purchaseResults) {
       const purchase = Purchase.fromJson(purchaseData);
 
@@ -28,59 +25,66 @@ export async function payMonth(purchaseIds) {
         continue;
       }
 
-      const updatedPurchase = purchase.copyWith({
-        payed_quotas: purchase.payed_quotas + 1,
-      });
+      const payed_quotas = purchase.payed_quotas + 1;
+      const first_quota_date = (payed_quotas === 1 || !purchase.first_quota_date)
+        ? now.toISOString()
+        : purchase.first_quota_date.toISOString();
 
-      // If the purchase has just started paying or if the first quota date is null, use now.
-      const first_quota_date = (updatedPurchase.payed_quotas === 1 || !updatedPurchase.first_quota_date)
-        ? now
-        : updatedPurchase.first_quota_date;
-      const finalization_date = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas
-        ? now
-        : updatedPurchase.finalization_date;
+      const finalization_date = payed_quotas === purchase.number_of_quotas
+        ? now.toISOString()
+        : (purchase.finalization_date ? purchase.finalization_date.toISOString() : null);
 
-      const purchaseType = PurchaseType.type(purchase.type);
-      const type = updatedPurchase.payed_quotas === updatedPurchase.number_of_quotas
-        ? purchaseType === PurchaseType.currentDebtorPurchase
+      const currentType = PurchaseType.type(purchase.type);
+      const type = payed_quotas === purchase.number_of_quotas
+        ? currentType === PurchaseType.currentDebtorPurchase
           ? PurchaseType.settledDebtorPurchase
           : PurchaseType.settledCreditorPurchase
-        : updatedPurchase.type;
+        : currentType;
 
       updates.push({
         id: purchase.id,
-        payed_quotas: updatedPurchase.payed_quotas,
-        first_quota_date: first_quota_date.toISOString(),
-        finalization_date: finalization_date ? finalization_date.toISOString() : null,
-        type: PurchaseType.getValue(type),
+        payed_quotas,
+        first_quota_date,
+        finalization_date,
+        type: PurchaseType.getValue(type)
       });
-
-      updatedPurchases.push(updatedPurchase);
     }
 
-    if (updates.length > 0) {
-      // Realizar un solo UPDATE en lote
-      const updateQueries = updates.map(
-        (u) => `(${u.id}, ${u.payed_quotas}, '${u.first_quota_date}', ${u.finalization_date ? `'${u.finalization_date}'` : 'NULL'}, ${u.type})`
-      ).join(",");
+    if (updates.length === 0) return [];
 
-      const updateQuery = `
-        UPDATE purchases AS p
-        SET 
-          payed_quotas = u.payed_quotas,
-          first_quota_date = u.first_quota_date::timestamp,
-          finalization_date = u.finalization_date::timestamp,
-          type = u.type
-        FROM (VALUES ${updateQueries}) AS u(id, payed_quotas, first_quota_date, finalization_date, type)
-        WHERE p.id = u.id;
-      `;
+    // Armar VALUES con castings
+    const values = [];
+    const valueTuples = updates.map((u, i) => {
+      const offset = i * 5;
+      values.push(u.id, u.payed_quotas, u.first_quota_date, u.finalization_date, u.type);
+      return `($${offset + 1}::BIGINT, $${offset + 2}::INT, $${offset + 3}::TIMESTAMP, $${offset + 4}::TIMESTAMP, $${offset + 5}::INT)`;
+    });
 
-      await executeQuery(updateQuery);
-    }
+    const updateQuery = `
+      UPDATE purchases AS p
+      SET 
+        payed_quotas = u.payed_quotas,
+        first_quota_date = u.first_quota_date,
+        finalization_date = u.finalization_date,
+        type = u.type
+      FROM (
+        VALUES ${valueTuples.join(", ")}
+      ) AS u(id, payed_quotas, first_quota_date, finalization_date, type)
+      WHERE p.id = u.id
+      RETURNING p.*;
+    `;
+
+    const updatedRows = await executeQuery(updateQuery, values, true);
+
+    const updatedPurchases = updatedRows.map(Purchase.fromJson);
+
+    updatedPurchases.forEach(p => {
+      logYellow(`✅ Compra actualizada ID ${p.id}, cuotas pagadas: ${p.payed_quotas}`);
+    });
 
     return updatedPurchases;
   } catch (error) {
-    logRed(`Error in payMonth: ${error.stack}`);
+    logRed(`Error en payMonth: ${error.stack}`);
     throw error;
   }
 }

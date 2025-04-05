@@ -7,7 +7,7 @@ dotenv.config({ path: process.env.ENV_FILE || ".env" });
 const connectionString = process.env.DATABASE_URL;
 const connection = postgres(connectionString, { ssl: "require" });
 
-export async function executeQuery(query, values = [], log = false) {
+export async function executeQuery(query, values = [], log = true) {
   if (log) {
     logYellow(
       `Ejecutando query: ${query} con valores: ${JSON.stringify(values)}`

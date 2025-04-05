@@ -12,7 +12,7 @@ import { createFinancialEntity } from "../functions/controllers/financial_entiti
 import { getFinancialEntities } from "../functions/controllers/financial_entities/get_financial_entities.js";
 import { editFinancialEntity } from "../functions/controllers/financial_entities/edit_financial_entity.js";
 import { deleteFinancialEntity } from "../functions/controllers/financial_entities/delete_financial_entity.js";
-import { createFinancialEntityLog } from "../functions/funciones/logs.js";
+import { createFinancialEntityLog, createMultiplePurchaseLogs } from "../functions/funciones/logs.js";
 
 // ==============================================
 // Controladores y funciones de log para Usuarios
@@ -419,12 +419,8 @@ router.put("/purchases/pay-month", async (req, res) => {
     }
     const { purchaseIds } = req.body;
     const result = await payMonth(purchaseIds);
-    for (const id of purchaseIds) {
-      await createPurchaseLog(
-        id,
-        "Cuota pagada, desde el 'pagar mes'"
-      );
-    }
+    await createMultiplePurchaseLogs(purchaseIds, "Cuota pagada, desde el 'pagar mes'");
+
     res.status(200).json({
       body: result,
       message: "Mes pagado correctamente."
