@@ -5,7 +5,7 @@ import { FinancialEntity } from "../../models/financial_entity.js";
 export async function createFinancialEntity(name, userId) {
   try {
     const checkQuery =
-      "SELECT id FROM financial_entities WHERE name = $1 AND user_id = $2 LIMIT 1";
+      "SELECT id FROM financial_entities WHERE name = $1 AND user_id = $2 AND deleted = false LIMIT 1";
     const checkResult = await executeQuery(checkQuery, [name, userId]);
 
     if (checkResult.length > 0) {
