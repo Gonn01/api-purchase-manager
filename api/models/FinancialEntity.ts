@@ -1,5 +1,5 @@
-import { Purchase } from "./purchase";
-import { FinancialEntityLog } from "./logs";
+import { FinancialEntityLog } from "./Logs";
+import { Purchase } from "./Purchase";
 
 export interface IFinancialEntity {
   id: number;

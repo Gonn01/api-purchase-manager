@@ -1,5 +1,5 @@
-import { currency_type, CurrencyType } from "./currency_type";
-import { PurchaseLog } from "./logs";
+import { currency_type, CurrencyType } from "./CurrencyType";
+import { PurchaseLog } from "./Logs";
 
 export enum PurchaseTypeEnum {
     CurrentDebtorPurchase = 0,
