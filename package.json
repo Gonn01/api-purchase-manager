@@ -15,7 +15,8 @@
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "@vercel/node": "latest",
+    "@types/cors": "^2.8.19",
+    "@vercel/node": "^2.3.0",
     "typescript": "^5.0.0"
   }
 }
