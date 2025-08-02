@@ -1,5 +1,6 @@
 import { executeQuery } from "../../db";
 import { FinancialEntityListDto } from "../../dtos/financial_entities/FinancialEntityListDto";
+import CustomException from "../../models/CustomException";
 
 export async function getFinancialEntitiesByUser(
   userId: number
@@ -14,10 +15,13 @@ export async function getFinancialEntitiesByUser(
       ORDER BY fe.id ASC
     `;
 
-    const result = await executeQuery<any>(query, [userId], true);
+    const result = await executeQuery<any>(query, [userId]);
 
     if (!result || result.length === 0) {
-      return [];
+     throw new CustomException({
+        title: "No se encontraron entidades financieras",
+        message: "No se encontraron entidades financieras para este usuario.",
+      });
     }
 
     return result.map((row: any): FinancialEntityListDto => ({

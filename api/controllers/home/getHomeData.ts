@@ -1,6 +1,7 @@
 import { executeQuery } from "../../db";
 import { FinancialEntityHomeDto } from "../../dtos/home/FinancialEntityHomeDto";
 import { PurchaseHomeDto } from "../../dtos/home/PurchaseHomeDto";
+import CustomException from "../../models/CustomException";
 import { PurchaseTypeEnum } from "../../models/Purchase";
 
 /**
@@ -37,7 +38,10 @@ export async function getHomeData(userId: number): Promise<FinancialEntityHomeDt
   const result = await executeQuery<any>(query, [userId]);
 
   if (result.length === 0) {
-    throw new Error("No se encontraron entidades financieras para este usuario.");
+    throw new CustomException({
+      title: "No se encontraron entidades financieras",
+      message: "No se encontraron entidades financieras para este usuario.",
+    });
   }
 
   const groupedEntities: Record<number, FinancialEntityHomeDto> = {};
@@ -75,7 +79,6 @@ export async function getHomeData(userId: number): Promise<FinancialEntityHomeDt
         fixed_expense: Boolean(row.fixed_expense),
       };
 
-      // Clasificación en current o settled
       if (
         purchase.type === PurchaseTypeEnum.CurrentDebtorPurchase ||
         purchase.type === PurchaseTypeEnum.CurrentCreditorPurchase

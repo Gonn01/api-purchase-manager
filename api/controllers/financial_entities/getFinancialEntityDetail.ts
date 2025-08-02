@@ -45,7 +45,7 @@ export async function getFinancialEntityDetail(
 `;
 
 
-  const result = await executeQuery<any>(query, [entityId], true);
+  const result = await executeQuery<any>(query, [entityId]);
 
   if (!result || result.length === 0) {
     throw new CustomException({
