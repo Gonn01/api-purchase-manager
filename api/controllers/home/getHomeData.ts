@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db";
-import { FinancialEntityHomeDto } from "../../dtos/home/FinancialEntityDto";
+import { FinancialEntityHomeDto } from "../../dtos/home/FinancialEntityHomeDto";
 import { PurchaseHomeDto } from "../../dtos/home/PurchaseHomeDto";
 import { PurchaseTypeEnum } from "../../models/Purchase";
 
