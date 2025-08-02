@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 import { Purchase, PurchaseType, PurchaseTypeEnum } from "../../models/Purchase";
 
 /**
@@ -100,10 +100,6 @@ export async function payMonth(purchaseIds: number[]): Promise<Purchase[]> {
 
     // 4. Devolver instancias de Purchase
     const updatedPurchases = updatedRows.map((row: any) => Purchase.fromJson(row));
-
-    updatedPurchases.forEach((p) => {
-      logYellow(`✅ Compra actualizada ID ${p.id}, cuotas pagadas: ${p.payed_quotas}`);
-    });
 
     return updatedPurchases;
   } catch (error: any) {

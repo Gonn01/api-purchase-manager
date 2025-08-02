@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
 import { logRed } from "../../functions/logsCustom";
-import { PurchaseDto } from "../../dtos/purchases/PurchaseDto";
+import { PurchaseDto } from "../../dtos/purchases/PurchaseHomeDto";
 import { PurchaseMapper } from "../../mappers/PurchaseMapper";
 
 /**

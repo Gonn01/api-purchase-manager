@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
 import { createPurchaseLog } from "../../functions/logs";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 import { Purchase, PurchaseType, PurchaseTypeEnum } from "../../models/Purchase";
 
 /**
@@ -70,10 +70,6 @@ export async function unpayQuota(purchaseId: number): Promise<Purchase> {
     }
 
     const updatedPurchase = Purchase.fromJson(updatedPurchaseResult[0]);
-
-    logYellow(
-      `⚠️ Se desmarcó una cuota para la compra ID ${updatedPurchase.id}. Quedan pagadas: ${updatedPurchase.payed_quotas}`
-    );
 
     // 4. Crear log automático
     await createPurchaseLog(

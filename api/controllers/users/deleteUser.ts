@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 
 /**
  * Elimina un usuario de la base de datos.
@@ -28,8 +28,6 @@ export async function deleteUser(userId: number): Promise<{ id: number }> {
       logRed("No se pudo eliminar el usuario.");
       throw new Error("No se pudo eliminar el usuario.");
     }
-
-    logYellow(`Usuario eliminado con ID ${userId}`);
 
     return { id: result[0].id };
   } catch (error: any) {

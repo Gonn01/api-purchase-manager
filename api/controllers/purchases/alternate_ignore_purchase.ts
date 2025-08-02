@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
-import { logRed, logYellow } from "../../functions/logsCustom";
-import { PurchaseDto } from "../../dtos/purchases/PurchaseDto";
+import { logRed } from "../../functions/logsCustom";
+import { PurchaseDto } from "../../dtos/purchases/PurchaseHomeDto";
 import { PurchaseMapper } from "../../mappers/PurchaseMapper";
 
 /**
@@ -35,10 +35,6 @@ export async function alternateIgnorePurchase(
       RETURNING *
     `;
     const updated = await executeQuery < any > (updateQuery, [!currentIgnored, purchaseId]);
-
-    logYellow(
-      `Compra con ID ${purchaseId} ahora está ignored = ${!currentIgnored}`
-    );
 
     return PurchaseMapper.toDto(updated[0]);
   } catch (error: any) {

@@ -1,7 +1,6 @@
 import { executeQuery } from "../../db";
 import { createFinancialEntityLog } from "../../functions/logs";
-import { logRed, logYellow } from "../../functions/logsCustom";
-
+import { logRed } from "../../functions/logsCustom";
 /**
  * Marca una entidad financiera como eliminada (soft delete).
  * @param financialEntityId ID de la entidad financiera
@@ -38,8 +37,6 @@ export async function deleteFinancialEntity(
       logRed("No se pudo eliminar la entidad financiera.");
       throw new Error("No se pudo eliminar la entidad financiera.");
     }
-
-    logYellow(`Entidad financiera eliminada ID: ${financialEntityId}`);
 
     // 3. Agregar log
     await createFinancialEntityLog(financialEntityId, "Entidad eliminada");

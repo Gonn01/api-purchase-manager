@@ -1,5 +1,5 @@
 import { executeQuery } from "../../db";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 import { UserDto } from "../../dtos/users/UserDto";
 import { UserMapper } from "../../mappers/UserMapper";
 
@@ -41,9 +41,7 @@ export async function editUser(
       logRed("No se pudo actualizar el usuario.");
       throw new Error("No se pudo actualizar el usuario.");
     }
-
-    logYellow(`Usuario con ID ${userId} actualizado. Nuevo nombre: ${newName}`);
-
+    
     return UserMapper.toDto(result[0]);
   } catch (error: any) {
     logRed(`Error en editUser: ${error.stack || error.message}`);

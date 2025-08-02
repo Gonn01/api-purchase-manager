@@ -1,25 +1,21 @@
 import { executeQuery } from "../../db";
-import { logRed } from "../../functions/logsCustom";
-import { FinancialEntity } from "../../models/FinancialEntity";
-import { FinancialEntityDto } from "../../dtos/financial_entities/FinancialEntityDto";
+import { FinancialEntityCreateRequestDto } from "../../dtos/financial_entities/FinancialEntityCreateRequestDto";
+import {  FinancialEntityListDto } from "../../dtos/financial_entities/FinancialEntityListDto";
 import { createFinancialEntityLog } from "../../functions/logs";
-import { FinancialEntityMapper } from "../../mappers/FinancialEntityMapper";
 
 /**
  * Crea una nueva entidad financiera y agrega un log de creación.
  */
 export async function createFinancialEntity(
-  name: string,
+  data: FinancialEntityCreateRequestDto,
   userId: number
-): Promise<FinancialEntityDto> {
-  try {
-    // Verificar duplicados
+): Promise<FinancialEntityListDto> {
     const checkQuery = `
       SELECT id FROM financial_entities
       WHERE name = $1 AND user_id = $2 AND deleted = false
       LIMIT 1
     `;
-    const checkResult = await executeQuery(checkQuery, [name, userId]);
+    const checkResult = await executeQuery(checkQuery, [data.name, userId]);
 
     if (checkResult.length > 0) {
       throw new Error(
@@ -27,23 +23,17 @@ export async function createFinancialEntity(
       );
     }
 
-    // Insertar nueva entidad
-    const query = `
-      INSERT INTO financial_entities (name, user_id)
-      VALUES ($1, $2)
-      RETURNING *
-    `;
-    const result = await executeQuery(query, [name, userId], true);
+   const query = `
+    INSERT INTO financial_entities (name, user_id, created_at, deleted)
+    VALUES ($1, $2, NOW(), false)
+    RETURNING id, name, created_at, user_id, deleted
+  `;
 
-    const entity = FinancialEntity.fromJson(result[0]);
+  const result = await executeQuery<any>(query, [data.name, userId], false);
 
-    // Crear log
-    await createFinancialEntityLog(entity.id, "Entidad creada");
-
-    // Devolver DTO
-    return FinancialEntityMapper.toDto(entity);
-  } catch (error: any) {
-    logRed(`Error en createFinancialEntity: ${error.stack || error.message}`);
-    throw error;
-  }
+  const row = result[0];
+  return {
+    id: row.id,
+    name: row.name,
+  };
 }

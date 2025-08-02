@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
 import { createPurchaseLog } from "../../functions/logs";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 import { Purchase, PurchaseType, PurchaseTypeEnum } from "../../models/Purchase";
 
 /**
@@ -71,10 +71,6 @@ export async function payQuota(purchaseId: number): Promise<Purchase> {
     }
 
     const updatedPurchase = Purchase.fromJson(updatedRows[0]);
-
-    logYellow(
-      `✅ Cuota pagada para compra ID ${updatedPurchase.id}. Total pagadas: ${updatedPurchase.payed_quotas}`
-    );
 
     // 5. Insertar log automático
     await createPurchaseLog(

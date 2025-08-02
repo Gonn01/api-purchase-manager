@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { logRed } from "./logsCustom";
-import CustomException from "../models/CustomException";
 import { Status } from "../models/Status";
+import CustomException from "../models/CustomException";
 export function verificarTodo(
   req: Request,
   res: Response,

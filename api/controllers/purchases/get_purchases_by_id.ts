@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
-import { logRed, logYellow } from "../../functions/logsCustom";
-import { PurchaseDto } from "../../dtos/purchases/PurchaseDto";
+import { logRed } from "../../functions/logsCustom";
+import { PurchaseDto } from "../../dtos/purchases/PurchaseHomeDto";
 import { PurchaseLogDto } from "../../dtos/purchases/PurchaseLogDto";
 import { PurchaseLogMapper } from "../../mappers/PurchaseLogMapper";
 import { PurchaseMapper } from "../../mappers/PurchaseMapper";
@@ -40,7 +40,6 @@ export async function getPurchasesById(
     const logs = await executeQuery < any > (queryLogs, [purchaseId]);
 
     const mappedLogs = logs.map((log: any) => {
-      logYellow(`Log encontrado: ${JSON.stringify(log)}`);
       return PurchaseLogMapper.toDto(log);
     });
 

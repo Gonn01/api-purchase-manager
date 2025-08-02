@@ -2,12 +2,12 @@ import { Router, Request, Response } from "express";
 import { verificarTodo } from "../functions/verifyParameters";
 import { createFinancialEntity } from "../controllers/financial_entities/createFinancialEntity";
 import { createFinancialEntityLog } from "../functions/logs";
-import { logPurple, logRed, logYellow } from "../functions/logsCustom";
+import { logPurple } from "../functions/logsCustom";
 import { handleError } from "../functions/errorHandler";
 import { deleteFinancialEntity } from "../controllers/financial_entities/deleteFinancialEntity";
 import { editFinancialEntity } from "../controllers/financial_entities/editFinancialEntity";
-import { getFinancialEntities } from "../controllers/financial_entities/getFinancialEntities";
-import { getPurchaseLogsByEntity } from "../controllers/financial_entities/getLogsByFinancialEntity";
+import { getFinancialEntitiesByUser } from "../controllers/financial_entities/getFinancialEntitiesByUser";
+import { getFinancialEntityDetail } from "../controllers/financial_entities/getFinancialEntityDetail";
 
 const router = Router();
 
@@ -28,8 +28,6 @@ router.post("/", async (req: Request, res: Response) => {
       result.id,
       `Entidad financiera creada: ${name} (Usuario: ${userId})`
     );
-
-    logYellow(`Entidad creada: ${JSON.stringify(result)}`);
 
     res.status(200).json({
       body: result,
@@ -103,14 +101,13 @@ router.put("/:financialEntityId", async (req: Request, res: Response) => {
 });
 
 // GET /api/financial-entities/:userId
-router.get("/:userId", async (req: Request, res: Response) => {
+router.get("/user/:userId", async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
-    // Validar parámetro userId
-    if (!verificarTodo(req, res, ["userId"], [])) return;
+  verificarTodo(req, res, ["userId"], []);
 
     const { userId } = req.params;
-    const result = await getFinancialEntities(Number(userId));
+    const result = await getFinancialEntitiesByUser(Number(userId));
 
     res.status(200).json({
       body: result,
@@ -123,8 +120,9 @@ router.get("/:userId", async (req: Request, res: Response) => {
     logPurple(`Tiempo de ejecución: ${endTime - startTime} ms`);
   }
 });
+
 // GET /api/financial-entities/:entityId/purchases/logs
-router.get("/:entityId/purchases/logs", async (req: Request, res: Response) => {
+router.get("/:entityId/detail", async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
     // Validación con verificarTodo
@@ -132,7 +130,7 @@ router.get("/:entityId/purchases/logs", async (req: Request, res: Response) => {
 
     const entityId = Number(req.params.entityId);
 
-    const logs = await getPurchaseLogsByEntity(entityId);
+    const logs = await getFinancialEntityDetail(entityId);
 
     res.status(200).json({
       message: "Logs obtenidos correctamente.",

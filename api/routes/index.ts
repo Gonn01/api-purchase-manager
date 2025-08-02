@@ -13,7 +13,7 @@ const router = Router();
 router.use("/auth", authRouter);
 router.use("/financial-entities", financialEntitiesRouter);
 router.use("/home", homeRouter);
-router.use("/purchases", purchasesRouter);
-router.use("/users", usersRouter);
+// router.use("/purchases", purchasesRouter);
+// router.use("/users", usersRouter);
 
 export default router;

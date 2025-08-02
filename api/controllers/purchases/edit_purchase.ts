@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
-import { logRed, logYellow } from "../../functions/logsCustom";
-import { PurchaseDto } from "../../dtos/purchases/PurchaseDto";
+import { logRed } from "../../functions/logsCustom";
+import { PurchaseDto } from "../../dtos/purchases/PurchaseHomeDto";
 import { PurchaseMapper } from "../../mappers/PurchaseMapper";
 
 /**
@@ -19,9 +19,6 @@ export async function editPurchase(
   financialEntityId: number,
   fixedExpense: boolean
 ): Promise<PurchaseDto> {
-  logYellow(
-    `editPurchase: ${id}, ${ignored}, ${image}, ${amount}, ${number_of_quotas}, ${payed_quotas}, ${currency_type}, ${name}, ${type}, ${financialEntityId}, ${fixedExpense}`
-  );
 
   try {
     // 1. Verificar que exista la compra
@@ -88,8 +85,6 @@ export async function editPurchase(
       logRed("No se pudo actualizar la compra.");
       throw new Error("No se pudo actualizar la compra.");
     }
-
-    logYellow(`Compra con ID ${id} actualizada correctamente.`);
 
     // 5. Retornar como DTO
     return PurchaseMapper.toDto(result[0]);

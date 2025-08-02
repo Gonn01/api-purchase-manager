@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
 import { createPurchaseLog } from "../../functions/logs";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 
 /**
  * Elimina (soft delete) una compra marcándola como deleted.
@@ -32,8 +32,6 @@ export async function deletePurchase(purchaseId: number): Promise<{ id: number }
       logRed("No se pudo eliminar la compra.");
       throw new Error("No se pudo eliminar la compra.");
     }
-
-    logYellow(`Compra con ID ${purchaseId} marcada como eliminada.`);
 
     // 3. Crear log de eliminación
     await createPurchaseLog(purchaseId, "Compra eliminada");

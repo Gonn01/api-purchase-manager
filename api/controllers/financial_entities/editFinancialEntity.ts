@@ -1,6 +1,6 @@
 import { executeQuery } from "../../db";
 import { createFinancialEntityLog } from "../../functions/logs";
-import { logRed, logYellow } from "../../functions/logsCustom";
+import { logRed } from "../../functions/logsCustom";
 
 /**
  * Edita el nombre de una entidad financiera.
@@ -44,8 +44,6 @@ export async function editFinancialEntity(
       logRed("No se pudo actualizar la entidad financiera.");
       throw new Error("No se pudo actualizar la entidad financiera.");
     }
-
-    logYellow(`Entidad financiera editada ID: ${financialEntityId} → Nuevo nombre: ${newName}`);
 
     // 4. Crear log
     await createFinancialEntityLog(financialEntityId, `Entidad renombrada a "${newName}"`);
