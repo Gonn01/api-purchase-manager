@@ -1,6 +1,6 @@
 import fs from "fs";
 import dotenv from "dotenv";
-import { executeQuery } from "./functions/db.js"; // Import your query function
+import { executeQuery } from "./api/db.js"; // Import your query function
 
 dotenv.config({ path: process.env.ENV_FILE || ".env" });
 

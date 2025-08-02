@@ -8,11 +8,11 @@ import { verifyAll } from "./funciones/verifyParameters.js";
 // ==============================================
 // Controladores y funciones de log para Financial Entities
 // ==============================================
-import { createFinancialEntity } from "../functions/controllers/financial_entities/create_financial_entity.js";
-import { getFinancialEntities } from "../functions/controllers/financial_entities/get_financial_entities.js";
-import { editFinancialEntity } from "../functions/controllers/financial_entities/edit_financial_entity.js";
-import { deleteFinancialEntity } from "../functions/controllers/financial_entities/delete_financial_entity.js";
-import { createFinancialEntityLog, createMultiplePurchaseLogs } from "../functions/funciones/logs.js";
+import { createFinancialEntity } from "./controllers/financial_entities/create_financial_entity.js";
+import { getFinancialEntities } from "./controllers/financial_entities/get_financial_entities.js";
+import { editFinancialEntity } from "./controllers/financial_entities/edit_financial_entity.js";
+import { deleteFinancialEntity } from "./controllers/financial_entities/delete_financial_entity.js";
+import { createFinancialEntityLog, createMultiplePurchaseLogs } from "./funciones/logs.js";
 
 // ==============================================
 // Controladores y funciones de log para Usuarios
@@ -35,7 +35,7 @@ import { payQuota } from "./controllers/purchases/pay_quota.js";
 import { unpayQuota } from "./controllers/purchases/unpay_quota.js";
 import { payMonth } from "./controllers/purchases/pay_month.js";
 import { alternateIgnorePurchase } from "./controllers/purchases/alternate_ignore_purchase.js";
-import { createPurchaseLog } from "../functions/funciones/logs.js";
+import { createPurchaseLog } from "./funciones/logs.js";
 
 // ==============================================
 // Controladores para Home
