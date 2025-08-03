@@ -45,19 +45,11 @@ router.post("/", verifyToken, async (req: Request, res: Response) => {
 router.delete("/:financialEntityId", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
-    // Validación de params
-    if (!verificarTodo(req, res, ["financialEntityId"], [])) return;
+    verificarTodo(req, res, ["financialEntityId"], []);
 
     const { financialEntityId } = req.params;
 
-    // Eliminar la entidad
     await deleteFinancialEntity(Number(financialEntityId));
-
-    // Crear log de auditoría
-    await createFinancialEntityLog(
-      Number(financialEntityId),
-      "Entidad financiera eliminada."
-    );
 
     res.status(200).json({
       message: "Entidad financiera eliminada correctamente.",
@@ -101,12 +93,12 @@ router.put("/:financialEntityId", verifyToken, async (req: Request, res: Respons
 });
 
 // GET /api/financial-entities/:userId
-router.get("/user/:userId", verifyToken, async (req: Request, res: Response) => {
+router.get("/", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
-    verificarTodo(req, res, ["userId"], []);
+    verificarTodo(req, res,);
 
-    const { userId } = req.params;
+    const { userId } = (req as any).user;
     const result = await getFinancialEntitiesByUser(Number(userId));
 
     res.status(200).json({

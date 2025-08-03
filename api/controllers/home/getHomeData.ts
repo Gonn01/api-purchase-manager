@@ -37,13 +37,6 @@ WHERE
 
   const result = await executeQuery(query, [userId]);
 
-  if (result.length === 0) {
-    throw new CustomException({
-      title: "No se encontraron entidades financieras",
-      message: "No se encontraron entidades financieras para este usuario.",
-    });
-  }
-
   const groupedEntities: Record<number, FinancialEntityHomeDto> = {};
 
   result.forEach((row: any) => {
