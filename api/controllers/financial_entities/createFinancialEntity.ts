@@ -1,7 +1,7 @@
 import { executeQuery } from "../../db";
 import { FinancialEntityCreateRequestDto } from "../../dtos/financial_entities/FinancialEntityCreateRequestDto";
 import {  FinancialEntityListDto } from "../../dtos/financial_entities/FinancialEntityListDto";
-import { createFinancialEntityLog } from "../../functions/logs";
+import CustomException from "../../models/CustomException";
 
 /**
  * Crea una nueva entidad financiera y agrega un log de creación.
@@ -18,15 +18,16 @@ export async function createFinancialEntity(
     const checkResult = await executeQuery(checkQuery, [data.name, userId]);
 
     if (checkResult.length > 0) {
-      throw new Error(
-        "Ya existe una entidad financiera con ese nombre para este usuario."
-      );
+      throw new CustomException({
+        title: "Entidad financiera duplicada",
+        message: "Ya existe una entidad financiera con ese nombre para este usuario."
+      });
     }
 
    const query = `
-    INSERT INTO financial_entities (name, user_id, created_at, deleted)
-    VALUES ($1, $2, NOW(), false)
-    RETURNING id, name, created_at, user_id, deleted
+    INSERT INTO financial_entities (name, user_id)
+    VALUES ($1, $2)
+    RETURNING id, name
   `;
 
   const result = await executeQuery<any>(query, [data.name, userId], false);

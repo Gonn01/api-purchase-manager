@@ -8,10 +8,12 @@
     "start": "vercel dev"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "firebase-admin": "^13.2.0",
+    "jsonwebtoken": "^9.0.2",
     "postgres": "^3.4.5"
   },
   "devDependencies": {

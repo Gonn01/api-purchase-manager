@@ -3,7 +3,6 @@ import { verificarTodo } from "../functions/verifyParameters";
 import { login } from "../controllers/auth/login";
 import { handleError } from "../functions/errorHandler";
 import { logPurple } from "../functions/logsCustom";
-
 const router = Router();
 
 // POST /api/users/login
@@ -11,7 +10,7 @@ router.post("/login", async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
     // Validar body obligatorio
-    if (!verificarTodo(req, res, [], ["firebaseUserId", "name", "email"])) return;
+    verificarTodo(req, res, [], ["firebaseUserId", "name", "email"])
 
     const { firebaseUserId, email, name } = req.body;
     const response = await login(firebaseUserId, email, name);

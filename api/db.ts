@@ -20,7 +20,7 @@ const connection: Sql = postgres(connectionString, { ssl: "require" });
 export async function executeQuery<T = any>(
   query: string,
   values: any[] = [],
-  log: boolean = true
+  log: boolean = false
 ): Promise<T[]> {
   if (log) {
     logYellow(
@@ -29,7 +29,7 @@ export async function executeQuery<T = any>(
   }
 
   try {
-    const results = await connection.unsafe < T[] > (query, values);
+    const results = await connection.unsafe<T[]>(query, values);
 
     if (log) {
       logYellow(`Query ejecutado con éxito: ${JSON.stringify(results)}`);

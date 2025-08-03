@@ -8,22 +8,22 @@ import { deleteFinancialEntity } from "../controllers/financial_entities/deleteF
 import { editFinancialEntity } from "../controllers/financial_entities/editFinancialEntity";
 import { getFinancialEntitiesByUser } from "../controllers/financial_entities/getFinancialEntitiesByUser";
 import { getFinancialEntityDetail } from "../controllers/financial_entities/getFinancialEntityDetail";
+import { verifyToken } from "../functions/verifyToken";
+import { FinancialEntityListDto } from "../dtos/financial_entities/FinancialEntityListDto";
 
 const router = Router();
 
 // POST /api/financial-entities
-router.post("/", async (req: Request, res: Response) => {
+router.post("/", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
-    // Validar parámetros obligatorios
-    if (!verificarTodo(req, res, [], ["name", "userId"])) return;
+    verificarTodo(req, res, [], ["name"]);
 
-    const { name, userId } = req.body;
+    const { name } = req.body;
+    const { userId } = (req as any).user;
 
-    // Crear la entidad financiera
-    const result = await createFinancialEntity(name, userId);
+    const result = await createFinancialEntity({ name } as FinancialEntityListDto, userId);
 
-    // Crear log automático
     await createFinancialEntityLog(
       result.id,
       `Entidad financiera creada: ${name} (Usuario: ${userId})`
@@ -42,7 +42,7 @@ router.post("/", async (req: Request, res: Response) => {
 });
 
 // DELETE /api/financial-entities/:financialEntityId
-router.delete("/:financialEntityId", async (req: Request, res: Response) => {
+router.delete("/:financialEntityId", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
     // Validación de params
@@ -71,7 +71,7 @@ router.delete("/:financialEntityId", async (req: Request, res: Response) => {
 });
 
 // PUT /api/financial-entities/:financialEntityId
-router.put("/:financialEntityId", async (req: Request, res: Response) => {
+router.put("/:financialEntityId", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
     // Validar params y body
@@ -101,10 +101,10 @@ router.put("/:financialEntityId", async (req: Request, res: Response) => {
 });
 
 // GET /api/financial-entities/:userId
-router.get("/user/:userId", async (req: Request, res: Response) => {
+router.get("/user/:userId", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
-  verificarTodo(req, res, ["userId"], []);
+    verificarTodo(req, res, ["userId"], []);
 
     const { userId } = req.params;
     const result = await getFinancialEntitiesByUser(Number(userId));
@@ -122,7 +122,7 @@ router.get("/user/:userId", async (req: Request, res: Response) => {
 });
 
 // GET /api/financial-entities/:entityId/purchases/logs
-router.get("/:entityId/detail", async (req: Request, res: Response) => {
+router.get("/:entityId/detail", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
     // Validación con verificarTodo

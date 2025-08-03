@@ -2,18 +2,18 @@ import { Router, Request, Response } from "express";
 import { getHomeData } from "../controllers/home/getHomeData";
 import { verificarTodo } from "../functions/verifyParameters";
 import { handleError } from "../functions/errorHandler";
-import { logPurple } from "../functions/logsCustom";
+import { logGreen, logPurple } from "../functions/logsCustom";
+import { verifyToken } from "../functions/verifyToken";
 
 const router = Router();
 
 // GET /api/home/:userId
-router.get("/:userId", async (req: Request, res: Response) => {
+router.get("/", verifyToken, async (req: Request, res: Response) => {
   const startTime = performance.now();
   try {
     // Validar parámetros con verificarTodo
-    if (!verificarTodo(req, res, ["userId"])) return;
-
-    const { userId } = req.params;
+    verificarTodo(req, res)
+    const { userId } = (req as any).user;
     const result = await getHomeData(Number(userId));
 
     res.status(200).json({
