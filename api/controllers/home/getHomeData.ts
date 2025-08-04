@@ -10,29 +10,29 @@ import { PurchaseTypeEnum } from "../../models/Purchase";
  */
 export async function getHomeData(userId: number): Promise<FinancialEntityHomeDto[]> {
   const query = `
-SELECT 
-  fe.id AS financial_entity_id,
-  fe.name AS fe_name,
-      p.id AS purchase_id,
-      p.finalization_date,
-      p.first_quota_date,
-      p.ignored,
-      p.image,
-      p.amount,
-      p.amount_per_quota,
-      p.number_of_quotas,
-      p.payed_quotas,
-      p.currency_type,
-      p.name AS p_name,
-      p.type,
-      p.fixed_expense
-FROM 
-  financial_entities fe
-INNER JOIN 
-      purchases p ON fe.id = p.financial_entity_id AND p.deleted = false
-WHERE 
-  fe.user_id = $1
-      AND fe.deleted = false;
+    SELECT 
+      fe.id AS financial_entity_id,
+      fe.name AS fe_name,
+          p.id AS purchase_id,
+          p.finalization_date,
+          p.first_quota_date,
+          p.ignored,
+          p.image,
+          p.amount,
+          p.amount_per_quota,
+          p.number_of_quotas,
+          p.payed_quotas,
+          p.currency_type,
+          p.name AS p_name,
+          p.type,
+          p.fixed_expense
+    FROM 
+      financial_entities fe
+    INNER JOIN 
+          purchases p ON fe.id = p.financial_entity_id AND p.deleted = false
+    WHERE 
+      fe.user_id = $1
+          AND fe.deleted = false;
   `;
 
   const result = await executeQuery(query, [userId]);

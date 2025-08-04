@@ -1,6 +1,5 @@
 import { executeQuery } from "../../db";
 import LoginResponse from "../../dtos/auth/loginResponse";
-import { logRed } from "../../functions/logsCustom";
 import jwt, { SignOptions, Secret } from "jsonwebtoken";
 import CustomException from "../../models/CustomException";
 
@@ -36,9 +35,8 @@ export async function login(
   }
 
   const secret: Secret = process.env.JWT_SECRET as Secret;
-  const expiresInEnv = process.env.JWT_EXPIRES_IN ? Number(process.env.JWT_EXPIRES_IN) : undefined;
   const options: SignOptions = {
-    expiresIn: expiresInEnv ?? 3600,
+    expiresIn: 60 * 60 * 24 * 30,
   };
 
   const token = jwt.sign({ userId }, secret, options);
