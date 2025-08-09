@@ -1,109 +1,183 @@
 import { executeQuery } from "../../db";
-import { logRed } from "../../functions/logsCustom";
-import { Purchase, PurchaseType, PurchaseTypeEnum } from "../../models/Purchase";
+import { PurchaseHomeDto } from "../../dtos/home/PurchaseHomeDto";
+import CustomException from "../../models/CustomException";
+import { PurchaseTypeEnum } from "../../models/PurchaseType";
 
 /**
- * Marca como pagada la cuota de este mes para varias compras.
+ * Marca como pagada la cuota de este mes para varias compras y
+ * devuelve el estado final COMPLETO de la entidad financiera afectada.
  */
-export async function payMonth(purchaseIds: number[]): Promise<Purchase[]> {
-  try {
+export async function payMonth(purchaseIds: number[]): Promise<PurchaseHomeDto[]> {
     if (!Array.isArray(purchaseIds) || purchaseIds.length === 0) {
-      throw new Error("Invalid purchaseIds: must be a non-empty array.");
+        throw new CustomException({
+            title: "Parámetros inválidos",
+            message: "purchaseIds debe ser un array no vacío.",
+        });
     }
 
     const now = new Date();
 
-    // 1. Obtener las compras
+    // 1) Traer purchases objetivo
     const selectQuery = `
-      SELECT * 
-      FROM purchases 
-      WHERE id = ANY($1) AND deleted = false
-    `;
-    const purchaseResults = await executeQuery<any>(selectQuery, [purchaseIds], true);
+    SELECT
+      id, name, amount, amount_per_quota, number_of_quotas, payed_quotas,
+      currency_type, type, fixed_expense, first_quota_date, finalization_date,
+      image, ignored, financial_entity_id, deleted
+    FROM purchases
+    WHERE id = ANY($1) AND deleted = false
+  `;
+    const rows = await executeQuery<any>(selectQuery, [purchaseIds], true);
 
-    if (purchaseResults.length === 0) {
-      throw new Error("No purchases found for the provided IDs.");
+    if (rows.length === 0) {
+        throw new CustomException({
+            title: "No encontrado",
+            message: "No se encontraron compras con los IDs provistos.",
+        });
     }
 
-    const updates: {
-      id: number;
-      payed_quotas: number;
-      first_quota_date: string;
-      finalization_date: string | null;
-      type: number;
-    }[] = [];
+    // 2) Validar una sola FE
+    const feIds = new Set<number>(rows.map((r: any) => Number(r.financial_entity_id)));
+    if (feIds.size !== 1) {
+        throw new CustomException({
+            title: "Compras de múltiples entidades",
+            message: "payMonth debe recibir compras de una única entidad financiera.",
+        });
+    }
+    const [financialEntityId] = Array.from(feIds);
 
-    // 2. Procesar cada compra usando Purchase.fromJson
-    for (const purchaseData of purchaseResults) {
-      const purchase = Purchase.fromJson(purchaseData);
+    type UpdateItem = {
+        id: number;
+        payed_quotas: number;
+        first_quota_date: Date | null;
+        finalization_date: Date | null;
+        type: number;
+    };
 
-      if (purchase.payed_quotas >= purchase.number_of_quotas) {
-        logRed(`Todas las cuotas ya están pagadas para la compra ID: ${purchase.id}`);
-        continue;
-      }
+    const updates: UpdateItem[] = [];
 
-      const payed_quotas = purchase.payed_quotas + 1;
-      const first_quota_date =
-        payed_quotas === 1 || !purchase.first_quota_date
-          ? now.toISOString()
-          : purchase.first_quota_date.toISOString();
+    for (const p of rows) {
+        const fixed = Boolean(p.fixed_expense);
+        const totalQuotas = Number(p.number_of_quotas ?? 0);
+        const currentPayed = Number(p.payed_quotas ?? 0);
+        const curType = Number(p.type);
 
-      const finalization_date =
-        payed_quotas === purchase.number_of_quotas
-          ? now.toISOString()
-          : purchase.finalization_date
-          ? purchase.finalization_date.toISOString()
-          : null;
+        // Caso A: gasto fijo -> no se procesa
+        if (fixed) continue;
 
-      const currentType = purchase.type;
-      const type =
-        payed_quotas === purchase.number_of_quotas
-          ? currentType === PurchaseTypeEnum.CurrentDebtorPurchase
-            ? PurchaseTypeEnum.SettledDebtorPurchase
-            : PurchaseTypeEnum.SettledCreditorPurchase
-          : currentType;
+        // Caso B: sin cuotas (totalQuotas === 0) -> debe estar Settled
+        if (totalQuotas === 0) {
+            const shouldBeSettled =
+                curType === PurchaseTypeEnum.CurrentDebtorPurchase ||
+                curType === PurchaseTypeEnum.CurrentCreditorPurchase;
 
-      updates.push({
-        id: purchase.id,
-        payed_quotas,
-        first_quota_date,
-        finalization_date,
-        type: PurchaseType.getValue(type),
-      });
+            if (shouldBeSettled) {
+                updates.push({
+                    id: Number(p.id),
+                    payed_quotas: currentPayed,              // no cambia
+                    first_quota_date: p.first_quota_date ? new Date(p.first_quota_date) : null,
+                    finalization_date: p.finalization_date ? new Date(p.finalization_date) : now,
+                    type:
+                        curType === PurchaseTypeEnum.CurrentDebtorPurchase
+                            ? PurchaseTypeEnum.SettledDebtorPurchase
+                            : PurchaseTypeEnum.SettledCreditorPurchase,
+                });
+            }
+            continue;
+        }
+
+        // Caso C: ya alcanzó o superó cuotas -> normalizar a Settled si no lo está
+        if (currentPayed >= totalQuotas) {
+            const shouldBeSettled =
+                curType === PurchaseTypeEnum.CurrentDebtorPurchase ||
+                curType === PurchaseTypeEnum.CurrentCreditorPurchase;
+
+            if (shouldBeSettled) {
+                updates.push({
+                    id: Number(p.id),
+                    payed_quotas: currentPayed,              // no cambia
+                    first_quota_date: p.first_quota_date ? new Date(p.first_quota_date) : null,
+                    finalization_date: p.finalization_date ? new Date(p.finalization_date) : now,
+                    type:
+                        curType === PurchaseTypeEnum.CurrentDebtorPurchase
+                            ? PurchaseTypeEnum.SettledDebtorPurchase
+                            : PurchaseTypeEnum.SettledCreditorPurchase,
+                });
+            }
+            continue;
+        }
+
+        // Caso D: todavía no está saldada -> pagar 1 cuota
+        const newPayed = currentPayed + 1;
+        const newFirstQuotaDate =
+            currentPayed === 0 || !p.first_quota_date ? now : p.first_quota_date;
+        const isNowSettled = newPayed >= totalQuotas;
+
+        updates.push({
+            id: Number(p.id),
+            payed_quotas: newPayed,
+            first_quota_date: newFirstQuotaDate ? new Date(newFirstQuotaDate) : null,
+            finalization_date: isNowSettled ? now : null,
+            type: isNowSettled
+                ? (curType === PurchaseTypeEnum.CurrentDebtorPurchase
+                    ? PurchaseTypeEnum.SettledDebtorPurchase
+                    : PurchaseTypeEnum.SettledCreditorPurchase)
+                : curType,
+        });
     }
 
-    if (updates.length === 0) return [];
+    // 4) Ejecutar batch UPDATE (si hay algo para actualizar)
+    if (updates.length > 0) {
+        const values: any[] = [];
+        const tuples = updates.map((u, i) => {
+            const o = i * 5;
+            values.push(u.id, u.payed_quotas, u.first_quota_date, u.finalization_date, u.type);
+            return `($${o + 1}::BIGINT, $${o + 2}::INT, $${o + 3}::TIMESTAMP, $${o + 4}::TIMESTAMP, $${o + 5}::INT)`;
+        });
 
-    // 3. Armar batch update con VALUES
-    const values: any[] = [];
-    const valueTuples = updates.map((u, i) => {
-      const offset = i * 5;
-      values.push(u.id, u.payed_quotas, u.first_quota_date, u.finalization_date, u.type);
-      return `($${offset + 1}::BIGINT, $${offset + 2}::INT, $${offset + 3}::TIMESTAMP, $${offset + 4}::TIMESTAMP, $${offset + 5}::INT)`;
-    });
-
-    const updateQuery = `
+        const updateQuery = `
       UPDATE purchases AS p
-      SET 
-        payed_quotas = u.payed_quotas,
-        first_quota_date = u.first_quota_date,
-        finalization_date = u.finalization_date,
-        type = u.type
-      FROM (
-        VALUES ${valueTuples.join(", ")}
-      ) AS u(id, payed_quotas, first_quota_date, finalization_date, type)
-      WHERE p.id = u.id
-      RETURNING p.*;
+         SET payed_quotas     = u.payed_quotas,
+             first_quota_date = u.first_quota_date,
+             finalization_date= u.finalization_date,
+             type             = u.type
+        FROM (VALUES ${tuples.join(", ")})
+             AS u(id, payed_quotas, first_quota_date, finalization_date, type)
+       WHERE p.id = u.id
+         AND p.deleted = false
+      RETURNING p.id
     `;
+        await executeQuery<any>(updateQuery, values, false);
+    }
 
-    const updatedRows = await executeQuery<any>(updateQuery, values, true);
+    // 5) Devolver estado final completo de la FE
+    const allAfterQuery = `
+    SELECT
+      id, name, amount, amount_per_quota, number_of_quotas, payed_quotas,
+      currency_type, type, fixed_expense, first_quota_date, finalization_date,
+      image, ignored, financial_entity_id
+    FROM purchases
+    WHERE financial_entity_id = $1
+      AND deleted = false
+    ORDER BY type, id
+  `;
+    const allAfterRows = await executeQuery<any>(allAfterQuery, [financialEntityId], true);
 
-    // 4. Devolver instancias de Purchase
-    const updatedPurchases = updatedRows.map((row: any) => Purchase.fromJson(row));
+    const result: PurchaseHomeDto[] = allAfterRows.map((u: any) => ({
+        id: Number(u.id),
+        name: u.name,
+        amount: Number(u.amount),
+        amount_per_quota: u.amount_per_quota != null ? Number(u.amount_per_quota) : null,
+        number_of_quotas: u.number_of_quotas != null ? Number(u.number_of_quotas) : null,
+        payed_quotas: u.payed_quotas != null ? Number(u.payed_quotas) : null,
+        currency_type: Number(u.currency_type),
+        type: Number(u.type),
+        fixed_expense: Boolean(u.fixed_expense),
+        first_quota_date: u.first_quota_date ? new Date(u.first_quota_date).toISOString() : null,
+        finalization_date: u.finalization_date ? new Date(u.finalization_date).toISOString() : null,
+        image: u.image,
+        ignored: Boolean(u.ignored),
+        financial_entity_id: Number(u.financial_entity_id),
+    }));
 
-    return updatedPurchases;
-  } catch (error: any) {
-    logRed(`Error en payMonth: ${error.stack || error.message}`);
-    throw error;
-  }
+    return result;
 }

@@ -1,83 +1,137 @@
 import { executeQuery } from "../../db";
+import { PurchaseHomeDto } from "../../dtos/home/PurchaseHomeDto";
 import { createPurchaseLog } from "../../functions/logs";
 import { logRed } from "../../functions/logsCustom";
-import { Purchase, PurchaseType, PurchaseTypeEnum } from "../../models/Purchase";
+import { PurchaseTypeEnum } from "../../models/PurchaseType";
 
 /**
  * Desmarca una cuota pagada de una compra (retrocede un mes).
  */
-export async function unpayQuota(purchaseId: number): Promise<Purchase> {
+export async function unpayQuota(purchaseId: number): Promise<PurchaseHomeDto> {
   try {
-    // 1. Buscar la compra
-    const purchaseQuery = `SELECT * FROM purchases WHERE id = $1 AND deleted = false;`;
-    const purchaseResult = await executeQuery < any > (purchaseQuery, [purchaseId], true);
+    // 1) Buscar la compra
+    const purchaseQuery = `
+      SELECT *
+      FROM purchases
+      WHERE id = $1 AND deleted = false
+      LIMIT 1
+    `;
+    const rows = await executeQuery<any>(purchaseQuery, [purchaseId], true);
 
-    if (purchaseResult.length === 0) {
+    if (rows.length === 0) {
       throw new Error("Purchase not found.");
     }
 
-    const purchase = Purchase.fromJson(purchaseResult[0]);
+    const purchase = rows[0] as {
+      id: number;
+      name: string;
+      amount: string | number;
+      amount_per_quota: string | number | null;
+      number_of_quotas: number | null;
+      payed_quotas: number | null;
+      currency_type: number;
+      type: number;
+      fixed_expense: boolean;
+      first_quota_date: string | Date | null;
+      finalization_date: string | Date | null;
+      image: string | null;
+      ignored: boolean;
+      financial_entity_id: number;
+    };
 
-    if (purchase.payed_quotas === 0) {
+    // 2) Validaciones
+    if (purchase.fixed_expense) {
+      throw new Error("Cannot unpay quota on a fixed-expense purchase.");
+    }
+
+    const totalQuotas = Number(purchase.number_of_quotas ?? 0);
+    const currentPayed = Number(purchase.payed_quotas ?? 0);
+
+    if (totalQuotas <= 0) {
+      throw new Error("Purchase has no quotas to unpay.");
+    }
+    if (currentPayed <= 0) {
       throw new Error("No quotas have been paid to decrease.");
     }
 
-    // 2. Calcular nuevos valores
-    const updatedPayedQuotas = purchase.payed_quotas - 1;
+    // 3) Calcular nuevos valores
+    const newPayedQuotas = currentPayed - 1;
 
-    const finalizationDate =
-      updatedPayedQuotas === purchase.number_of_quotas
-        ? purchase.finalization_date
-        : null;
+    // Si queda en 0, quitamos first_quota_date; si no, la dejamos como estaba
+    const newFirstQuotaDate =
+      newPayedQuotas === 0 ? null : purchase.first_quota_date;
 
-    const firstQuotaDate =
-      updatedPayedQuotas === 0 ? null : purchase.first_quota_date;
+    // Si deja de estar saldada, finalization_date debe ser null
+    const wasSettled = purchase.finalization_date != null;
+    const stillSettled = newPayedQuotas >= totalQuotas; // debería ser false si bajamos
+    const newFinalizationDate = stillSettled ? purchase.finalization_date : null;
 
-    let updatedType: PurchaseTypeEnum;
-    if (updatedPayedQuotas === purchase.number_of_quotas) {
-      updatedType = purchase.type;
-    } else {
-      updatedType =
-        purchase.type === PurchaseTypeEnum.SettledDebtorPurchase
-          ? PurchaseTypeEnum.CurrentDebtorPurchase
-          : PurchaseTypeEnum.CurrentCreditorPurchase;
+    // Revertir el type si estaba Settled*
+    let newType = purchase.type;
+    if (!stillSettled) {
+      if (purchase.type === PurchaseTypeEnum.SettledDebtorPurchase) {
+        newType = PurchaseTypeEnum.CurrentDebtorPurchase;
+      } else if (purchase.type === PurchaseTypeEnum.SettledCreditorPurchase) {
+        newType = PurchaseTypeEnum.CurrentCreditorPurchase;
+      }
     }
 
-    // 3. Actualizar en DB
+    // 4) Actualizar en DB
     const updateQuery = `
       UPDATE purchases
-      SET payed_quotas = $1,
-          first_quota_date = $2,
-          finalization_date = $3,
-          type = $4
-      WHERE id = $5
-      RETURNING *;
+         SET payed_quotas = $1,
+             first_quota_date = $2,
+             finalization_date = $3,
+             type = $4
+       WHERE id = $5
+         AND deleted = false
+      RETURNING
+        id, name, amount, amount_per_quota, number_of_quotas, payed_quotas,
+        currency_type, type, fixed_expense, first_quota_date, finalization_date,
+        image, ignored, financial_entity_id
     `;
-    const updatedPurchaseResult = await executeQuery < any > (
-      updateQuery,
-      [
-        updatedPayedQuotas,
-        firstQuotaDate,
-        finalizationDate,
-        PurchaseType.getValue(updatedType),
-        purchaseId,
-      ],
-      true
-    );
+    const params = [
+      newPayedQuotas,         // $1
+      newFirstQuotaDate,      // $2
+      newFinalizationDate,    // $3
+      newType,                // $4
+      purchaseId,             // $5
+    ];
 
-    if (updatedPurchaseResult.length === 0) {
+    // Para writes venías usando "false"
+    const updatedRows = await executeQuery<any>(updateQuery, params, false);
+
+    if (updatedRows.length === 0) {
       throw new Error("Failed to update purchase.");
     }
 
-    const updatedPurchase = Purchase.fromJson(updatedPurchaseResult[0]);
+    const u = updatedRows[0];
 
-    // 4. Crear log automático
+    // 5) Log automático (la cuota que “se desmarca” es la que estaba paga: currentPayed)
     await createPurchaseLog(
-      updatedPurchase.id,
-      `Cuota ${updatedPurchase.payed_quotas + 1} desmarcada`
+      Number(u.id),
+      `Cuota ${currentPayed} desmarcada`
     );
 
-    return updatedPurchase;
+    // 6) DTO de salida
+    const dto: PurchaseHomeDto = {
+      id: Number(u.id),
+      name: u.name,
+      amount: Number(u.amount),
+      amount_per_quota: u.amount_per_quota != null ? Number(u.amount_per_quota) : null,
+      number_of_quotas: u.number_of_quotas != null ? Number(u.number_of_quotas) : null,
+      payed_quotas: u.payed_quotas != null ? Number(u.payed_quotas) : null,
+      currency_type: Number(u.currency_type),
+      type: Number(u.type),
+      fixed_expense: Boolean(u.fixed_expense),
+      first_quota_date: u.first_quota_date ? new Date(u.first_quota_date).toISOString() : null,
+      finalization_date: u.finalization_date ? new Date(u.finalization_date).toISOString() : null,
+      image: u.image,
+      ignored: Boolean(u.ignored),
+      financial_entity_id: Number(u.financial_entity_id),
+    };
+
+    return dto;
   } catch (error: any) {
     logRed(`Error in unpayQuota: ${error.stack || error.message}`);
     throw error;

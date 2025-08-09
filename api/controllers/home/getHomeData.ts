@@ -1,8 +1,7 @@
 import { executeQuery } from "../../db";
 import { FinancialEntityHomeDto } from "../../dtos/home/FinancialEntityHomeDto";
 import { PurchaseHomeDto } from "../../dtos/home/PurchaseHomeDto";
-import CustomException from "../../models/CustomException";
-import { PurchaseTypeEnum } from "../../models/Purchase";
+import { PurchaseTypeEnum } from "../../models/PurchaseType";
 
 /**
  * Devuelve las entidades financieras de un usuario
@@ -13,26 +12,26 @@ export async function getHomeData(userId: number): Promise<FinancialEntityHomeDt
     SELECT 
       fe.id AS financial_entity_id,
       fe.name AS fe_name,
-          p.id AS purchase_id,
-          p.finalization_date,
-          p.first_quota_date,
-          p.ignored,
-          p.image,
-          p.amount,
-          p.amount_per_quota,
-          p.number_of_quotas,
-          p.payed_quotas,
-          p.currency_type,
-          p.name AS p_name,
-          p.type,
-          p.fixed_expense
-    FROM 
-      financial_entities fe
-    INNER JOIN 
-          purchases p ON fe.id = p.financial_entity_id AND p.deleted = false
-    WHERE 
-      fe.user_id = $1
-          AND fe.deleted = false;
+      p.id AS purchase_id,
+      p.finalization_date,
+      p.first_quota_date,
+      p.ignored,
+      p.image,
+      p.amount,
+      p.amount_per_quota,
+      p.number_of_quotas,
+      p.payed_quotas,
+      p.currency_type,
+      p.name AS p_name,
+      p.type,
+      p.fixed_expense
+    FROM financial_entities fe
+    LEFT JOIN purchases p
+      ON fe.id = p.financial_entity_id
+     AND p.deleted = false
+    WHERE fe.user_id = $1
+      AND fe.deleted = false
+    ORDER BY fe.id, p.id;
   `;
 
   const result = await executeQuery(query, [userId]);
@@ -70,6 +69,7 @@ export async function getHomeData(userId: number): Promise<FinancialEntityHomeDt
         name: row.p_name,
         type: Number(row.type),
         fixed_expense: Boolean(row.fixed_expense),
+        financial_entity_id: Number(row.financial_entity_id),
       };
 
       if (
