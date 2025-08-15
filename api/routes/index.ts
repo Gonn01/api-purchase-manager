@@ -1,11 +1,9 @@
 import { Router } from "express";
 
 // Importar routers de cada módulo
-import authRouter from "./auth";
-import financialEntitiesRouter from "./financialEntities";
-import homeRouter from "./home";
-import purchasesRouter from "./purchases";
-import usersRouter from "./users";
+import authRouter from "./auth.routes";
+import homeRouter from "./home.routes";
+import financialEntitiesRouter from "./financial-entities.routes";
 
 const router = Router();
 
@@ -13,7 +11,6 @@ const router = Router();
 router.use("/auth", authRouter);
 router.use("/financial-entities", financialEntitiesRouter);
 router.use("/home", homeRouter);
-router.use("/purchases", purchasesRouter);
 // router.use("/users", usersRouter);
 
 export default router;

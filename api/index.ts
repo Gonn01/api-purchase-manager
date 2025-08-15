@@ -1,7 +1,7 @@
 import express from "express";
-import routes from "./routes"; // 👈 tu index de routes
-import { logBlue } from "./functions/logsCustom";
+import routes from "./routes";
 import cors from "cors";
+import { logBlue } from "./lib/logs";
 
 const app = express();
 app.use(cors());

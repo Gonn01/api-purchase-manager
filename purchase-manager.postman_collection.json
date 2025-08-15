@@ -1,0 +1,254 @@
+{
+    "info": {
+        "name": "Purchase Manager API",
+        "_postman_id": "c2b5c5b8-9a18-4e09-8a37-0b1a1c3e7f98",
+        "description": "Colección para probar todos los endpoints del Purchase Manager",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"123456\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/auth/login",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Home",
+            "item": [
+                {
+                    "name": "Get Home",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/api/home",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "home"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Financial Entity",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Banco Ejemplo\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/home/financial-entities",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "home",
+                                "financial-entities"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Purchase",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"financialEntityId\": 1,\n  \"name\": \"Compra de prueba\",\n  \"amount\": 1500,\n  \"numberOfQuotas\": 3\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/home/purchases",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "home",
+                                "purchases"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Pay Current Purchases",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/api/home/purchases/pay-current",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "home",
+                                "purchases",
+                                "pay-current"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Financial Entities",
+            "item": [
+                {
+                    "name": "List Financial Entities",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/api/financial-entities",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "financial-entities"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Financial Entity Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/api/financial-entities/1/details",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "financial-entities",
+                                "1",
+                                "details"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Purchase Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/api/financial-entities/1/purchases/1/details",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "financial-entities",
+                                "1",
+                                "purchases",
+                                "1",
+                                "details"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "token",
+            "value": ""
+        }
+    ]
+}

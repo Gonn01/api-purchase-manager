@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import postgres, { Sql } from "postgres";
-import { logRed, logYellow } from "./functions/logsCustom";
+import { logYellow } from "./lib/logs";
 
 dotenv.config({ path: process.env.ENV_FILE || ".env" });
 
@@ -37,7 +37,6 @@ export async function executeQuery<T = any>(
 
     return results;
   } catch (error: any) {
-    logRed(`Error en executeQuery: ${error.stack || error.message}`);
     throw error;
   }
 }
