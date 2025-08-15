@@ -11,7 +11,7 @@ export class UserRepository {
         return rows.length ? Number(rows[0].id) : null;
     }
 
-    async create(email: string, name: string, firebaseUserId: string): Promise<number> {
+    async create(email: string, name: string | null | undefined, firebaseUserId: string): Promise<number> {
         const rows = await executeQuery<{ id: number }>(
             `INSERT INTO users (firebase_user_id, email, name)
        VALUES ($1, $2, $3)

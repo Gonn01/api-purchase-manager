@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { logRed } from "./logsCustom";
 import CustomException from "../models/CustomException";
 import { Status } from "../models/Status";
+import { logRed } from "../lib/logs";
 
 /**
  * Envía la respuesta de error apropiada y loguea, según el tipo de excepción.
