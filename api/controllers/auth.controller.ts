@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { LoginInputSchema } from "../dtos/auth/login-input.dto";
 import { AuthService } from "../services/auth.service";
+import { logPurple } from "../lib/logs";
 
 const service = new AuthService();
 
 export async function loginController(req: Request, res: Response) {
     const start = performance.now();
     try {
-        // Validación runtime con Zod
         const input = LoginInputSchema.parse(req.body);
 
         const result = await service.login(input);
@@ -23,9 +23,6 @@ export async function loginController(req: Request, res: Response) {
             },
         });
     } finally {
-        const end = performance.now();
-        // reemplazá por tu logger
-        // logPurple(`Tiempo de ejecución: ${end - start} ms`);
-        console.log(`💜 Tiempo de ejecución: ${end - start} ms`);
+        logPurple(`Tiempo de ejecución: ${performance.now() - start} ms`);
     }
 }
