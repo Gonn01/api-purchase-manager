@@ -79,22 +79,22 @@ export class HomeService {
 
     async createPurchase(userId: number, dto: PurchaseCreateDTO) {
         // ownership
-        const owns = await this.feRepo.ensureOwnership(userId, dto.financialEntityId);
+        const owns = await this.feRepo.ensureOwnership(userId, dto.financial_entity_id);
         if (!owns) { const e: any = new Error("La financial entity no pertenece al usuario"); e.status = 403; e.code = "FE_FORBIDDEN"; throw e; }
 
         // validar enum
         if (!isPurchaseType(dto.type)) parsePurchaseType(dto.type);
 
         const created = await this.purchaseRepo.create({
-            financialEntityId: dto.financialEntityId,
+            financial_entity_id: dto.financial_entity_id,
             name: dto.name.trim(),
             amount: dto.amount,
-            currencyType: dto.currencyType,
+            currency_type: dto.currency_type,
             type: dto.type,
-            amountPerQuota: dto.amountPerQuota ?? null,
-            numberOfQuotas: dto.numberOfQuotas ?? null,
-            firstQuotaDate: dto.firstQuotaDate ?? null,
-            fixedExpense: dto.fixedExpense ?? false,
+            amount_per_quota: dto.amount_per_quota ?? null,
+            number_of_quotas: dto.number_of_quotas ?? null,
+            first_quota_date: dto.first_quota_date ?? null,
+            fixed_expense: dto.fixed_expense ?? false,
             image: dto.image ?? null,
             ignored: dto.ignored ?? false,
         });

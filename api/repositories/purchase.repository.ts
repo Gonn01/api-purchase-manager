@@ -2,15 +2,15 @@ import { executeQuery } from "../db";
 
 export class PurchaseRepository {
     async create(data: {
-        financialEntityId: number;
+        financial_entity_id: number;
         name: string;
         amount: number;
-        currencyType: number;
+        currency_type: number;
         type: number;
-        amountPerQuota?: number | null;
-        numberOfQuotas?: number | null;
-        firstQuotaDate?: string | null;
-        fixedExpense?: boolean;
+        amount_per_quota?: number | null;
+        number_of_quotas?: number | null;
+        first_quota_date?: string | null;
+        fixed_expense?: boolean;
         image?: string | null;
         ignored?: boolean;
     }) {
@@ -23,9 +23,9 @@ export class PurchaseRepository {
        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,false)
        RETURNING id, financial_entity_id`,
             [
-                data.financialEntityId, data.name, data.amount, data.currencyType, data.type,
-                data.amountPerQuota ?? null, data.numberOfQuotas ?? null, data.firstQuotaDate ?? null,
-                !!data.fixedExpense, data.image ?? null, !!data.ignored
+                data.financial_entity_id, data.name, data.amount, data.currency_type, data.type,
+                data.amount_per_quota ?? null, data.number_of_quotas ?? null, data.first_quota_date ?? null,
+                !!data.fixed_expense, data.image ?? null, !!data.ignored
             ],
             true
         );

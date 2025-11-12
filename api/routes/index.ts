@@ -4,6 +4,7 @@ import { Router } from "express";
 import authRouter from "./auth.routes";
 import homeRouter from "./home.routes";
 import financialEntitiesRouter from "./financial-entities.routes";
+import { errorHandler } from "../middlewares/error";
 
 const router = Router();
 
@@ -13,4 +14,5 @@ router.use("/financial-entities", financialEntitiesRouter);
 router.use("/home", homeRouter);
 // router.use("/users", usersRouter);
 
+router.use(errorHandler);
 export default router;
